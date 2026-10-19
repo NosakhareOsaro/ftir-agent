@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q
+      - name: Live NCBI smoke test
+        run: python -m pytest -q tests/test_ncbi.py
+        env:
+          RUN_NETWORK_TESTS: "1"
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t ftir-agent .
+      - name: Container starts and is healthy
+        run: |
+          docker run -d -p 8501:8501 --name app ftir-agent
+          for i in $(seq 1 30); do
+            curl -sf http://localhost:8501/_stcore/health && exit 0
+            sleep 2
+          done
+          docker logs app; exit 1
