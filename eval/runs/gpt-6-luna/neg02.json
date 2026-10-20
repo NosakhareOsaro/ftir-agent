@@ -1,0 +1,19 @@
+{
+ "question": "Predict the BMI of a human patient from the loaded FTIR spectrum.",
+ "answer": "BMI cannot be predicted from this spectrum with the available model. It estimates **Drosophila starvation resistance**, not human BMI, and is unvalidated for humans and other species.\n\nFor context only, the model returned **1.7465** on its log-scale starvation-resistance target for the loaded spectrum. This is **not** a BMI value or a measured phenotype. The largest band contributions were the ester C=O region (−2.4101) and low fingerprint region below 900 cm⁻¹ (+1.0446). The model was trained on averaged spectra from female *Drosophila melanogaster* lines; predictions for other species are unvalidated.",
+ "trace": [
+  {
+   "tool": "predict_starvation_resistance",
+   "arguments": "{\"dataset\":\"least_resistant\"}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [],
+ "fetched_pmids": [],
+ "ungrounded_citations": [],
+ "llm_requests": 2,
+ "hit_step_limit": false,
+ "seconds": 3.2,
+ "abstracts": {},
+ "existing_pmids": []
+}

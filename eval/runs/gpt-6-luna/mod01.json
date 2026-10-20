@@ -1,0 +1,19 @@
+{
+ "question": "Predict starvation resistance for this spectrum and explain which spectral regions drive the prediction.",
+ "answer": "**Predicted starvation resistance: 4.8167** on the model’s **log-scale EMMean** scale for this spectrum (labelled DGRP509). This is a model prediction, not a measured value; higher values indicate greater resistance.\n\nThe prediction is driven mainly by the **ester C=O stretch region associated with triglycerides**, which contributes **+2.1533** overall. The strongest individual contributions are near **1742–1760 cm⁻¹**, especially 1760 cm⁻¹ (+0.5103). The **low fingerprint region below 900 cm⁻¹** contributes negatively (−0.4924). The **C–O/P=O region** adds +0.163, while the **O–H/N–H stretch region** subtracts −0.1585; amide II has a negligible contribution (−0.0024).\n\n**Important limitations:** The model was trained on averages from female *D. melanogaster* DGRP lines, so a single-spectrum prediction may be noisier. It did not transfer to the same trait measured in another lab, and its predictions are unvalidated for other species, sexes, diets, or instruments.",
+ "trace": [
+  {
+   "tool": "predict_starvation_resistance",
+   "arguments": "{\"dataset\":\"most_resistant\"}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [],
+ "fetched_pmids": [],
+ "ungrounded_citations": [],
+ "llm_requests": 2,
+ "hit_step_limit": false,
+ "seconds": 9.5,
+ "abstracts": {},
+ "existing_pmids": []
+}

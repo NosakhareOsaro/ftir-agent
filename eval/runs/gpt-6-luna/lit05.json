@@ -1,0 +1,75 @@
+{
+ "question": "What Drosophila gene encodes the homolog of human adipose triglyceride lipase (ATGL), and what is the phenotype of flies lacking it?",
+ "answer": "The Drosophila homolog of human ATGL is **Brummer (bmm)**. Flies lacking Brummer accumulate excess body fat because they cannot mobilize stored fat normally; Brummer is important for both ongoing fat regulation and acute fat mobilization. [PMID:17488184]\n\n**References**\n- Grönke, 2007 — *Dual lipolytic control of body fat storage and mobilization in Drosophila.*",
+ "trace": [
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila adipose triglyceride lipase ATGL homolog gene mutant phenotype\",\"max_results\":10}",
+   "error": null
+  },
+  {
+   "tool": "fetch_abstracts",
+   "arguments": "{\"pmids\":[\"25996931\"]}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila brummer mutant lack brummer phenotype lifespan starvation resistance locomotion\",\"max_results\":10}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"brummer lipase Drosophila triglyceride storage mutant\",\"max_results\":10}",
+   "error": null
+  },
+  {
+   "tool": "fetch_abstracts",
+   "arguments": "{\"pmids\":[\"17488184\",\"22505614\"]}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila brummer null mutant obesity lifespan development phenotype brummer lipase\",\"max_results\":10}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila brummer loss function triglyceride accumulation survival starvation\",\"max_results\":10}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Grönke 2005 brummer Drosophila lipase fat storage\",\"max_results\":10}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [
+  "17488184"
+ ],
+ "fetched_pmids": [
+  "25996931",
+  "17488184",
+  "22505614"
+ ],
+ "ungrounded_citations": [],
+ "llm_requests": 9,
+ "hit_step_limit": true,
+ "seconds": 39.1,
+ "abstracts": {
+  "25996931": {
+   "title": "Feeding and Fasting Signals Converge on the LKB1-SIK3 Pathway to Regulate Lipid Metabolism in Drosophila.",
+   "abstract": "LKB1 plays important roles in governing energy homeostasis by regulating AMP-activated protein kinase (AMPK) and other AMPK-related kinases, including the salt-inducible kinases (SIKs). However, the roles and regulation of LKB1 in lipid metabolism are poorly understood. Here we show that Drosophila LKB1 mutants display decreased lipid storage and increased gene expression of brummer, the Drosophila homolog of adipose triglyceride lipase (ATGL). These phenotypes are consistent with those of SIK3 mutants and are rescued by expression of constitutively active SIK3 in the fat body, suggesting that SIK3 is a key downstream kinase of LKB1. Using genetic and biochemical analyses, we identify HDAC4, a class IIa histone deacetylase, as a lipolytic target of the LKB1-SIK3 pathway. Interestingly, we found that the LKB1-SIK3-HDAC4 signaling axis is modulated by dietary conditions. In short-term fasting, the adipokinetic hormone (AKH) pathway, related to the mammalian glucagon pathway, inhibits the kinase activity of LKB1 as shown by decreased SIK3 Thr196 phosphorylation, and consequently induces HDAC4 nuclear localization and brummer gene expression. However, under prolonged fasting conditions, AKH-independent signaling decreases the activity of the LKB1-SIK3 pathway to induce lipolytic responses. We also identify that the Drosophila insulin-like peptides (DILPs) pathway, related to mammalian insulin pathway, regulates SIK3 activity in feeding conditions independently of increasing LKB1 kinase activity. Overall, these data suggest that fasting stimuli specifically control the kinase activity of LKB1 and establish the LKB1-SIK3 pathway as a converging point between feeding and fasting signals to control lipid homeostasis in Drosophila."
+  },
+  "17488184": {
+   "title": "Dual lipolytic control of body fat storage and mobilization in Drosophila.",
+   "abstract": "Energy homeostasis is a fundamental property of animal life, providing a genetically fixed balance between fat storage and mobilization. The importance of body fat regulation is emphasized by dysfunctions resulting in obesity and lipodystrophy in humans. Packaging of storage fat in intracellular lipid droplets, and the various molecules and mechanisms guiding storage-fat mobilization, are conserved between mammals and insects. We generated a Drosophila mutant lacking the receptor (AKHR) of the adipokinetic hormone signaling pathway, an insect lipolytic pathway related to ss-adrenergic signaling in mammals. Combined genetic, physiological, and biochemical analyses provide in vivo evidence that AKHR is as important for chronic accumulation and acute mobilization of storage fat as is the Brummer lipase, the homolog of mammalian adipose triglyceride lipase (ATGL). Simultaneous loss of Brummer and AKHR causes extreme obesity and blocks acute storage-fat mobilization in flies. Our data demonstrate that storage-fat mobilization in the fly is coordinated by two lipocatabolic systems, which are essential to adjust normal body fat content and ensure lifelong fat-storage homeostasis."
+  },
+  "22505614": {
+   "title": "Opposite and redundant roles of the two Drosophila perilipins in lipid mobilization.",
+   "abstract": "Lipid droplets are the main lipid storage sites in cells. Lipid droplet homeostasis is regulated by the surface accessibility of lipases. Mammalian adipose triglyceride lipase (ATGL) and hormone-sensitive lipase (HSL) are two key lipases for basal and stimulated lipolysis, respectively. Perilipins, the best known lipid droplet surface proteins, can either recruit lipases or prevent the access of lipases to lipid droplets. Mammals have five perilipin proteins, which often exhibit redundant functions, precluding the analysis of the exact role of individual perilipins in vivo. Drosophila have only two perilipins, PLIN1/LSD-1 and PLIN2/LSD-2. Previous studies revealed that PLIN2 is important for protecting lipid droplets from lipolysis mediated by Brummer (BMM), the Drosophila homolog of ATGL. In this study, we report the functional analysis of PLIN1 and Drosophila HSL. Loss-of-function and overexpression studies reveal that unlike PLIN2, PLIN1 probably facilitates lipid mobilization. HSL is recruited from the cytosol to the surface of lipid droplets under starved conditions and PLIN1 is necessary for the starved induced lipid droplet localization of HSL. Moreover, phenotypic analysis of plin1;plin2 double mutants revealed that PLIN1 and PLIN2 might have redundant functions in protecting lipid droplets from lipolysis. Therefore, the two Drosophila perilipins have both opposite and redundant roles. Domain swapping and deletion analyses indicate that the C-terminal region of PLIN1 confers functional specificity to PLIN1. Our study highlights the complex roles of Drosophila perilipin proteins and the evolutionarily conserved regulation of HSL translocation by perilipins."
+  }
+ },
+ "existing_pmids": [
+  "17488184"
+ ]
+}

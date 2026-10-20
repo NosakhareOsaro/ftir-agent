@@ -11,7 +11,7 @@ Automatic (no LLM involved):
   key_paper_hit      a known key paper was retrieved (fetched) during the run
   keyword_score      fraction of required facts ("must_mention" groups) present
 
-LLM judge (separate model call, temperature 0):
+LLM judge (separate model call; temperature from LLM_TEMPERATURE if set):
   citation_support   for each citation: does the fetched abstract support the
                      sentence that cites it? SUPPORTED / PARTIAL / UNSUPPORTED
   accuracy           answer vs reference answer: 2 correct, 1 partial, 0 wrong
@@ -64,11 +64,27 @@ def keyword_score(answer, groups):
 
 
 def sentences_citing(answer, pmid):
-    """The sentence(s) or bullet(s) in the answer that cite this PMID."""
-    parts = re.split(r"(?<=[.!?])\s+|\n+", answer)
+    """
+    The claim text in the answer that cites this PMID.
+
+    Usually the sentence containing the citation. When the citation stands on
+    its own after the full stop ("…claim. [PMID:1] [PMID:2]"), it covers the
+    paragraph before it, so that text is used instead. Reference-list lines
+    are only used if nothing in the body cites the paper.
+    """
     token = re.compile(rf"PMID:?\s*{pmid}\b", re.IGNORECASE)
-    found = [p.strip() for p in parts if token.search(p) and "References" not in p]
-    # Drop the bare reference-list line ("Mackay TF, 2012, ...") if anything else cites it
+    parts = re.split(r"^#*\s*References\b.*$", answer, maxsplit=1, flags=re.M | re.I)
+    body, refs = parts[0], (parts[1] if len(parts) > 1 else "")
+    found = []
+    for para in body.split("\n"):
+        sents = [s for s in re.split(r"(?<=[.!?])\s+", para.strip()) if s]
+        for i, s in enumerate(sents):
+            if not token.search(s):
+                continue
+            citation_only = not re.sub(r"[\[\]\s,;]|PMID:?\s*\d+", "", s, flags=re.I)
+            found.append(" ".join(sents[:i + 1]) if citation_only else s)
+    if not found:
+        found = [l.strip() for l in refs.split("\n") if token.search(l)]
     return found or [answer[:500]]
 
 
@@ -182,6 +198,8 @@ def main():
                 run = run_one(q, llm)
             except Exception as exc:
                 print(f"   failed: {exc}")
+                if str(exc)[:3] in ("401", "402", "403"):
+                    sys.exit("Stopping: auth/billing error, retrying other questions won't help.")
                 continue
             run_path.write_text(json.dumps(run, indent=1, ensure_ascii=False))
             judge_path.unlink(missing_ok=True)
@@ -193,6 +211,8 @@ def main():
                 judge_path.write_text(json.dumps(judge_run(judge, q, run), indent=1))
             except Exception as exc:
                 print(f"   judge failed: {exc}")
+                if str(exc)[:3] in ("401", "402", "403"):
+                    sys.exit("Stopping: auth/billing error, retrying other questions won't help.")
 
     all_qs = [json.loads(l) for l in (EVAL_DIR / "questions.jsonl").read_text().splitlines() if l]
     report = build_report(all_qs, run_dir, model_name, judge.model if judge else os.getenv("JUDGE_MODEL"))
@@ -221,6 +241,13 @@ def build_report(questions, run_dir, model_name, judge_model):
             continue
         jd = load_json(run_dir / f"{q['id']}.judge.json") or {}
         cited = run["cited_pmids"]
+        # One verdict per cited paper; if the judge repeats one, keep the strictest.
+        rank = {"SUPPORTED": 0, "PARTIAL": 1, "UNSUPPORTED": 2}
+        verdicts = {}
+        for v in jd.get("support", []):
+            if v["pmid"] in cited and rank.get(v["verdict"], 2) >= rank.get(verdicts.get(v["pmid"]), -1):
+                verdicts[v["pmid"]] = v["verdict"]
+        jd["support"] = [{"pmid": p, "verdict": v} for p, v in verdicts.items()]
         r = {
             "id": q["id"], "category": q["category"],
             "cited": len(cited),

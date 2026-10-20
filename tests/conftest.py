@@ -42,7 +42,7 @@ class FakeLLM:
         self.n_requests = 0
         self.model = "fake"
 
-    def chat(self, messages, tools=None, temperature=0.0):
+    def chat(self, messages, tools=None):
         self.sent.append({"messages": [dict(m) for m in messages], "tools": tools})
         self.n_requests += 1
         return self.replies.pop(0)

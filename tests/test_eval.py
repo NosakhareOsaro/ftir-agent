@@ -16,6 +16,19 @@ def test_keyword_score():
 def test_sentences_citing():
     ans = "First claim [PMID:1]. Second claim [PMID:2].\nReferences\n- Smith 2020 [PMID:1]"
     assert sentences_citing(ans, "2") == ["Second claim [PMID:2]."]
+    assert sentences_citing(ans, "1") == ["First claim [PMID:1]."]
+
+
+def test_citation_after_full_stop_covers_paragraph():
+    ans = ("About half are infected. Effects are rarely significant. [PMID:24714809] [PMID:2]\n\n"
+           "### References\n- Huang W, 2014. Natural variation. [PMID:24714809]")
+    assert sentences_citing(ans, "24714809") == [
+        "About half are infected. Effects are rarely significant. [PMID:24714809] [PMID:2]"]
+
+
+def test_reference_list_used_only_as_fallback():
+    ans = "Body text without citations.\n\nReferences\n- Mackay TF, 2012. The DGRP [PMID:22318601]"
+    assert sentences_citing(ans, "22318601") == ["- Mackay TF, 2012. The DGRP [PMID:22318601]"]
 
 
 def test_question_file_is_well_formed():

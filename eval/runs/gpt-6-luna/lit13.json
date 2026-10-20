@@ -1,0 +1,42 @@
+{
+ "question": "Is increased desiccation resistance in Drosophila melanogaster linked to the total amount of cuticular hydrocarbons?",
+ "answer": "No. In the studies retrieved, increased desiccation resistance was **not linked to a greater total amount of cuticular hydrocarbons**. One study instead associated it with a higher proportion of desaturated hydrocarbons, while another found no difference in total surface lipids between selected resistant flies and controls; the resistant flies had longer-chain hydrocarbons. [PMID:29456884] [PMID:9225453]\n\n**References**\n- Ferveur, 2018. *Desiccation resistance: effect of cuticular hydrocarbons and water content in Drosophila melanogaster adults.*\n- Gibbs, 1997. *Physiological mechanisms of evolved desiccation resistance in Drosophila melanogaster.*",
+ "trace": [
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila melanogaster desiccation resistance total cuticular hydrocarbons amount\",\"max_results\":10}",
+   "error": null
+  },
+  {
+   "tool": "fetch_abstracts",
+   "arguments": "{\"pmids\":[\"29456884\",\"9225453\"]}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [
+  "29456884",
+  "9225453"
+ ],
+ "fetched_pmids": [
+  "29456884",
+  "9225453"
+ ],
+ "ungrounded_citations": [],
+ "llm_requests": 3,
+ "hit_step_limit": false,
+ "seconds": 9.7,
+ "abstracts": {
+  "29456884": {
+   "title": "Desiccation resistance: effect of cuticular hydrocarbons and water content in Drosophila melanogaster adults.",
+   "abstract": "BACKGROUND: The insect cuticle covers the whole body and all appendages and has bi-directionnal selective permeability: it protects against environmental stress and pathogen infection and also helps to reduce water loss. The adult cuticle is often associated with a superficial layer of fatty acid-derived molecules such as waxes and long chain hydrocarbons that prevent rapid dehydration. The waterproofing properties of cuticular hydrocarbons (CHs) depend on their chain length and desaturation number. Drosophila CH biosynthesis involves an enzymatic pathway including several elongase and desaturase enzymes.\nMETHODS: The link between desiccation resistance and CH profile remains unclear, so we tested (1) experimentally selected desiccation-resistant lines, (2) transgenic flies with altered desaturase expression and (3) natural and laboratory-induced CH variants. We also explored the possible relationship between desiccation resistance, relative water content and fecundity in females.\nRESULTS: We found that increased desiccation resistance is linked with the increased proportion of desaturated CHs, but not with their total amount. Experimentally-induced desiccation resistance and CH variation both remained stable after many generations without selection. Conversely, flies with a higher water content and a lower proportion of desaturated CHs showed reduced desiccation resistance. This was also the case in flies with defective desaturase expression in the fat body.\nDISCUSSION: We conclude that rapidly acquired desiccation resistance, depending on both CH profile and water content, can remain stable without selection in a humid environment. These three phenotypes, which might be expected to show a simple relationship, turn out to have complex physiological and genetic links."
+  },
+  "9225453": {
+   "title": "Physiological mechanisms of evolved desiccation resistance in Drosophila melanogaster.",
+   "abstract": "We investigated physiological characters associated with water balance in laboratory populations of Drosophila melanogaster selected for resistance to desiccating conditions for over 100 generations. Five replicate, outbred, desiccation-selected (D) populations were compared with their control (C) populations. Water loss rates of female D flies were approximately 40% lower than those of C females. Although excretory water loss was reduced in desiccation-selected flies, it comprised less than 10% of total water loss, indicating that the D populations have evolved reduced cuticular and/or respiratory water loss rates. Total surface lipid amounts did not differ between the C and D flies. Cuticular hydrocarbons from D flies were longer than those from C flies and melted at slightly higher temperatures, possibly contributing to reduced water loss rates. Desiccation-selected flies contained approximately 30% more bulk water than controls, as well as more glycogen. However, total metabolic water stores did not differ between the stocks owing to higher lipid levels in the C populations. The ability to tolerate water loss, as measured by water content at the time of death, did not differ between D and C flies. Thus, evolution of increased desiccation resistance has occurred by multiple physiological mechanisms, but some potential adaptive differences have not evolved."
+  }
+ },
+ "existing_pmids": [
+  "29456884",
+  "9225453"
+ ]
+}

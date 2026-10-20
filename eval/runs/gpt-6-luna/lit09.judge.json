@@ -1,0 +1,28 @@
+{
+ "support": [
+  {
+   "pmid": "31544155",
+   "verdict": "PARTIAL",
+   "reason": "Accuracy and age-distribution results are stated; larger datasets may improve accuracy and enable wild use, but transfer concerns are not directly tested."
+  },
+  {
+   "pmid": "41957079",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract reports the stated laboratory, semi-field, and transfer-learning accuracies and cautions about laboratory-only generalisability."
+  },
+  {
+   "pmid": "37898634",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract reports leg-based accuracy of 0.73 for species and 0.77 for age groups under laboratory conditions."
+  },
+  {
+   "pmid": "35933384",
+   "verdict": "PARTIAL",
+   "reason": "The abstract directly supports consistent sample handling; it studies preservation and storage, not field-relevant validation or setting transfer."
+  }
+ ],
+ "accuracy": {
+  "score": 2,
+  "reason": "Correctly reports the lab-colony age-structure result and 82.6% species accuracy from the reference; extra details do not contradict it."
+ }
+}

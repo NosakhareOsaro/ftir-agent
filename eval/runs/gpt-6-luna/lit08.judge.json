@@ -1,0 +1,13 @@
+{
+ "support": [
+  {
+   "pmid": "22570636",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract reports the stated correlation, methods, SNP threshold, and authors\u2019 hypothesis about subtle relatedness rather than causal-variant tagging."
+  }
+ ],
+ "accuracy": {
+  "score": 2,
+  "reason": "Gives the reference estimate and correctly states prediction was modest and BayesB was no better; added details are consistent."
+ }
+}

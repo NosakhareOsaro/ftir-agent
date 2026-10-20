@@ -1,0 +1,19 @@
+{
+ "question": "Predict starvation resistance for these individual-fly spectra. How much should I trust single-fly predictions from this model?",
+ "answer": "### Predicted starvation resistance\n\nThe model predicts **starvation-resistance EMMean on a log scale** (higher means more resistant). These are **predictions, not measured survival values**.\n\n| Spectrum | Predicted EMMean |\n|---|---:|\n| DGRP555 — 1 | 2.7572 |\n| DGRP555 — 2 | 2.6027 |\n| DGRP555 — 3 | 4.3775 |\n\nThe strongest band contributions differ substantially between spectra. For spectrum 1, the low fingerprint region below 900 cm⁻¹ contributes **−0.476** and O–H/N–H stretch **+0.350**. For spectrum 2, ester C=O contributes **−0.583**, low fingerprint **+0.571**, and O–H/N–H stretch **−0.548**. For spectrum 3, ester C=O contributes **+2.021**, while low fingerprint contributes **−0.797** and O–H/N–H stretch **−0.276**. Contributions are on the model’s prediction scale; they describe how spectral regions move each prediction relative to the intercept, not causal effects.\n\n### How much to trust them?\n\n**Treat these single-fly estimates cautiously—especially the spread across the three flies.** The model was trained on spectra averaged by line across 108 female DGRP lines, not on individual flies; its model card specifically warns that single-fly spectra are noisier than the training data. Although the reported cross-validation R² is 0.673, that is for the training setup and does not establish equivalent accuracy for individual flies. The model also did not transfer well to the same trait measured in another lab, and its predictions are unvalidated for other species, sexes, diets, or instruments.\n\nNo prediction-specific warnings were returned, but that does not remove these limitations. I’d use these as **tentative estimates**, not precise individual rankings or measured resistance values.",
+ "trace": [
+  {
+   "tool": "predict_starvation_resistance",
+   "arguments": "{\"dataset\":\"single_flies\"}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [],
+ "fetched_pmids": [],
+ "ungrounded_citations": [],
+ "llm_requests": 2,
+ "hit_step_limit": false,
+ "seconds": 8.5,
+ "abstracts": {},
+ "existing_pmids": []
+}

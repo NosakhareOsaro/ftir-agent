@@ -1,0 +1,18 @@
+{
+ "support": [
+  {
+   "pmid": "25943032",
+   "verdict": "SUPPORTED",
+   "reason": "Defines within-genotype variation under common macro-environments as micro-environmental plasticity."
+  },
+  {
+   "pmid": "25943032",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract explicitly states that micro-environmental plasticity is trait-specific."
+  }
+ ],
+ "accuracy": {
+  "score": 1,
+  "reason": "Correctly defines micro-environmental plasticity and reports substantial DGRP genetic variation and heritabilities, but omits the reference\u2019s candidate-gene finding, Hsp90."
+ }
+}

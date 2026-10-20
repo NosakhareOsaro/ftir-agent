@@ -1,0 +1,72 @@
+{
+ "question": "Do mid-infrared spectroscopy models of mosquito age transfer well to new populations, and what was tried to improve this?",
+ "answer": "**Not reliably established.** In the 2019 study, age-structure predictions matched the *modelled* age distributions in laboratory-colony data, but the authors identified larger datasets and testing with wild mosquitoes as necessary next steps—not as demonstrated solutions to population transfer [PMID:31544155]. The abstracts available here do not report a direct test of how well an age model trained on one population predicts age in a new population.\n\nWhat was tried was mostly **model or feature refinement**, rather than a demonstrated population-transfer fix. In a 2024 *Anopheles funestus* study, selecting important spectral features modestly raised XGBoost accuracy from 87% to 89%; an MLP using selected features performed better in that dataset. The study used mosquitoes reared from larvae collected in one Tanzanian region, so the abstract does not establish that these improvements generalize to other populations [PMID:38500231]. The earlier study proposed collecting larger spectroscopy datasets and expanding evaluation to wild vectors [PMID:31544155].\n\n### References\n- González Jiménez, 2019. *Prediction of mosquito species and population age structure using mid-infrared spectroscopy and supervised machine learning.* [PMID:31544155]\n- Mwanga, 2024. *Rapid classification of epidemiologically relevant age categories of the malaria vector, Anopheles funestus.* [PMID:38500231]",
+ "trace": [
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"mosquito age grading mid-infrared spectroscopy transfer populations model generalization improve calibration\"}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"mosquito mid-infrared age prediction population transferability calibration\"}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Anopheles age grading infrared spectroscopy field populations machine learning\"}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"\\\"population age structure\\\" mid-infrared spectroscopy mosquito calibration population\"}",
+   "error": null
+  },
+  {
+   "tool": "fetch_abstracts",
+   "arguments": "{\"pmids\":[\"31544155\"]}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"mosquito mid-infrared spectroscopy age prediction external validation wild populations transferability\"}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"\\\"mid-infrared\\\" mosquito \\\"age\\\" field-collected model training population\"}",
+   "error": null
+  },
+  {
+   "tool": "fetch_abstracts",
+   "arguments": "{\"pmids\":[\"38500231\"]}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [
+  "31544155",
+  "38500231"
+ ],
+ "fetched_pmids": [
+  "31544155",
+  "38500231"
+ ],
+ "ungrounded_citations": [],
+ "llm_requests": 9,
+ "hit_step_limit": true,
+ "seconds": 34.6,
+ "abstracts": {
+  "31544155": {
+   "title": "Prediction of mosquito species and population age structure using mid-infrared spectroscopy and supervised machine learning.",
+   "abstract": "Despite the global efforts made in the fight against malaria, the disease is resurging. One of the main causes is the resistance that Anopheles mosquitoes, vectors of the disease, have developed to insecticides. Anopheles must survive for at least 10 days to possibly transmit malaria. Therefore, to evaluate and improve malaria vector control interventions, it is imperative to monitor and accurately estimate the age distribution of mosquito populations as well as their population sizes. Here, we demonstrate a machine-learning based approach that uses mid-infrared spectra of mosquitoes to characterise simultaneously both age and species identity of females of the African malaria vector species Anopheles gambiae and An. arabiensis, using laboratory colonies. Mid-infrared spectroscopy-based prediction of mosquito age structures was statistically indistinguishable from true modelled distributions. The accuracy of classifying mosquitoes by species was 82.6%. The method has a negligible cost per mosquito, does not require highly trained personnel, is rapid, and so can be easily applied in both laboratory and field settings. Our results indicate this method is a promising alternative to current mosquito species and age-grading approaches, with further improvements to accuracy and expansion for use with wild mosquito vectors possible through collection of larger mid-infrared spectroscopy data sets."
+  },
+  "38500231": {
+   "title": "Rapid classification of epidemiologically relevant age categories of the malaria vector, Anopheles funestus.",
+   "abstract": "BACKGROUND: Accurately determining the age and survival probabilities of adult mosquitoes is crucial for understanding parasite transmission, evaluating the effectiveness of control interventions and assessing disease risk in communities. This study was aimed at demonstrating the rapid identification of epidemiologically relevant age categories of Anopheles funestus, a major Afro-tropical malaria vector, through the innovative combination of infrared spectroscopy and machine learning, instead of the cumbersome practice of dissecting mosquito ovaries to estimate age based on parity status.\nMETHODS: Anopheles funestus larvae were collected in rural south-eastern Tanzania and reared in an insectary. Emerging adult females were sorted by age (1-16 days old) and preserved using silica gel. Polymerase chain reaction (PCR) confirmation was conducted using DNA extracted from mosquito legs to verify the presence of An. funestus and to eliminate undesired mosquitoes. Mid-infrared spectra were obtained by scanning the heads and thoraces of the mosquitoes using an attenuated total reflection-Fourier transform infrared (ATR-FT-IR) spectrometer. The spectra (N = 2084) were divided into two epidemiologically relevant age groups: 1-9 days (young, non-infectious) and 10-16 days (old, potentially infectious). The dimensionality of the spectra was reduced using principal component analysis, and then a set of machine learning and multi-layer perceptron (MLP) models were trained using the spectra to predict the mosquito age categories.\nRESULTS: The best-performing model, XGBoost, achieved overall accuracy of 87%, with classification accuracy of 89% for young and 84% for old An. funestus. When the most important spectral features influencing the model performance were selected to train a new model, the overall accuracy increased slightly to 89%. The MLP model, utilizing the significant spectral features, achieved higher classification accuracy of 95% and 94% for the young and old An. funestus, respectively. After dimensionality reduction, the MLP achieved 93% accuracy for both age categories.\nCONCLUSIONS: This study shows how machine learning can quickly classify epidemiologically relevant age groups of An. funestus based on their mid-infrared spectra. Having been previously applied to An. gambiae, An. arabiensis and An. coluzzii, this demonstration on An. funestus underscores the potential of this low-cost, reagent-free technique for widespread use on all the major Afro-tropical malaria vectors. Future research should demonstrate how such machine-derived age classifications in field-collected mosquitoes correlate with malaria in human populations."
+  }
+ },
+ "existing_pmids": [
+  "31544155",
+  "38500231"
+ ]
+}

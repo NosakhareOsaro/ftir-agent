@@ -1,0 +1,35 @@
+{
+ "question": "What nutritional indices did Unckless et al. measure across the DGRP, under which diets, and did they relate to other phenotypes?",
+ "answer": "Unckless et al. measured six nutritional indices across DGRP lines: **glucose, glycogen, glycerol, protein, triglycerides, and wet weight**. Flies were reared on either a **low-glucose** or **high-glucose** diet. The study found significant genetic variation in these measures and reported significant correlations between nutritional phenotypes and previously published measures of **starvation resistance, oxidative-stress sensitivity, and endoplasmic-reticulum stress**. The abstract does not specify which individual indices correlated with which stress phenotypes. [PMID:25583649]\n\n### References\n- Unckless, 2015 — *A genome-wide association study for nutritional indices in Drosophila.* [PMID:25583649]",
+ "trace": [
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Unckless DGRP nutritional indices diet phenotypes\"}",
+   "error": null
+  },
+  {
+   "tool": "fetch_abstracts",
+   "arguments": "{\"pmids\":[\"25583649\"]}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [
+  "25583649"
+ ],
+ "fetched_pmids": [
+  "25583649"
+ ],
+ "ungrounded_citations": [],
+ "llm_requests": 3,
+ "hit_step_limit": false,
+ "seconds": 11.7,
+ "abstracts": {
+  "25583649": {
+   "title": "A genome-wide association study for nutritional indices in Drosophila.",
+   "abstract": "Individuals are genetically variable for the way in which they process nutrients and in the effects of dietary content on reproductive success, immunity, and development. Here, we surveyed genetic variation for nutrient stores (glucose, glycogen, glycerol, protein, triglycerides, and wet weight) in the Drosophila Genetic Reference Panel (DGRP) after rearing the flies on either a low-glucose or high-glucose diet. We found significant genetic variation for these nutritional phenotypes and identified candidate genes that underlie that variation using genome-wide associations. In addition, we found several significant correlations between the nutritional phenotypes measured in this study and other previously published phenotypes, such as starvation stress resistance, oxidative stress sensitivity, and endoplasmic reticulum stress, which reinforce the notion that these lines can be used to robustly measure related phenotypes across distinct laboratories."
+  }
+ },
+ "existing_pmids": [
+  "25583649"
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "question": "How accurately did near-infrared spectroscopy identify species and age of Anopheles gambiae s.l. mosquitoes in the original NIRS study?",
+ "answer": "In the original study, near-infrared spectroscopy (NIRS) identified **field-collected mosquitoes’ species with about 80% accuracy**, rising to **almost 100% for laboratory-reared mosquitoes**. For age, it classified young versus old females with **about 80% accuracy**; when the comparison was simply young versus old insects, accuracy was **at least 90%**. [PMID:19815877]\n\n**Reference**  \nMayagaya, V.S., 2009. *Non-destructive determination of age and species of Anopheles gambiae s.l. using near-infrared spectroscopy.*",
+ "trace": [
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Anopheles gambiae near infrared spectroscopy age species identification original study\",\"max_results\":8}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Anopheles near-infrared spectroscopy distinguish species age mosquitoes\",\"max_results\":10}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"near infrared spectroscopy Anopheles gambiae s.l. age classification\",\"max_results\":8}",
+   "error": null
+  },
+  {
+   "tool": "fetch_abstracts",
+   "arguments": "{\"pmids\":[\"19815877\"]}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [
+  "19815877"
+ ],
+ "fetched_pmids": [
+  "19815877"
+ ],
+ "ungrounded_citations": [],
+ "llm_requests": 5,
+ "hit_step_limit": false,
+ "seconds": 22.3,
+ "abstracts": {
+  "19815877": {
+   "title": "Non-destructive determination of age and species of Anopheles gambiae s.l. using near-infrared spectroscopy.",
+   "abstract": "Determining malaria vector species and age is crucial to measure malaria risk. Although different in ecology and susceptibility to control, the African malaria vectors Anopheles gambiae sensu stricto and An. arabiensis are morphologically similar and can be differentiated only by molecular techniques. Furthermore, few reliable methods exist to estimate the age of these vectors, which is a key predictor of malaria transmission intensity. We evaluated the use of near-infrared spectroscopy (NIRS) to determine vector species and age. This non-destructive technique predicted the species of field-collected mosquitoes with approximately 80% accuracy and predicted the species of laboratory-reared insects with almost 100% accuracy. The relative age of young or old females was predicted with approximately 80% accuracy, and young and old insects were predicted with > or = 90% accuracy. For applications where rapid assessment of the age structure and species composition of wild vector populations is needed, NIRS offers a valuable alternative to traditional methods."
+  }
+ },
+ "existing_pmids": [
+  "19815877"
+ ]
+}

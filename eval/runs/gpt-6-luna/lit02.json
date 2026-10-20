@@ -1,0 +1,57 @@
+{
+ "question": "Roughly what fraction of DGRP lines are infected with Wolbachia, and does infection have much effect on quantitative traits?",
+ "answer": "About **half of DGRP lines** are infected with *Wolbachia*. Across quantitative traits, infection effects were **rarely statistically significant**, though that does not mean every trait is unaffected; one study, for example, reported a weak effect on recombination rate. [PMID:24714809] [PMID:27035832]\n\n### References\n- Huang W, 2014. *Natural variation in genome architecture among 205 Drosophila melanogaster Genetic Reference Panel lines.*\n- Hunter CM, 2016. *The Genetic Architecture of Natural Variation in Recombination Rate in Drosophila melanogaster.*",
+ "trace": [
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila Genetic Reference Panel Wolbachia infection fraction quantitative traits\",\"max_results\":8}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"DGRP Wolbachia prevalence phenotypic traits\",\"max_results\":10}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila melanogaster reference panel Wolbachia infection quantitative genetic variation\",\"max_results\":10}",
+   "error": null
+  },
+  {
+   "tool": "fetch_abstracts",
+   "arguments": "{\"pmids\":[\"24714809\",\"27035832\",\"34074789\"]}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [
+  "24714809",
+  "27035832"
+ ],
+ "fetched_pmids": [
+  "24714809",
+  "27035832",
+  "34074789"
+ ],
+ "ungrounded_citations": [],
+ "llm_requests": 5,
+ "hit_step_limit": false,
+ "seconds": 26.1,
+ "abstracts": {
+  "24714809": {
+   "title": "Natural variation in genome architecture among 205 Drosophila melanogaster Genetic Reference Panel lines.",
+   "abstract": "The Drosophila melanogaster Genetic Reference Panel (DGRP) is a community resource of 205 sequenced inbred lines, derived to improve our understanding of the effects of naturally occurring genetic variation on molecular and organismal phenotypes. We used an integrated genotyping strategy to identify 4,853,802 single nucleotide polymorphisms (SNPs) and 1,296,080 non-SNP variants. Our molecular population genomic analyses show higher deletion than insertion mutation rates and stronger purifying selection on deletions. Weaker selection on insertions than deletions is consistent with our observed distribution of genome size determined by flow cytometry, which is skewed toward larger genomes. Insertion/deletion and single nucleotide polymorphisms are positively correlated with each other and with local recombination, suggesting that their nonrandom distributions are due to hitchhiking and background selection. Our cytogenetic analysis identified 16 polymorphic inversions in the DGRP. Common inverted and standard karyotypes are genetically divergent and account for most of the variation in relatedness among the DGRP lines. Intriguingly, variation in genome size and many quantitative traits are significantly associated with inversions. Approximately 50% of the DGRP lines are infected with Wolbachia, and four lines have germline insertions of Wolbachia sequences, but effects of Wolbachia infection on quantitative traits are rarely significant. The DGRP complements ongoing efforts to functionally annotate the Drosophila genome. Indeed, 15% of all D. melanogaster genes segregate for potentially damaged proteins in the DGRP, and genome-wide analyses of quantitative traits identify novel candidate genes. The DGRP lines, sequence data, genotypes, quality scores, phenotypes, and analysis and visualization tools are publicly available."
+  },
+  "27035832": {
+   "title": "The Genetic Architecture of Natural Variation in Recombination Rate in Drosophila melanogaster.",
+   "abstract": "Meiotic recombination ensures proper chromosome segregation in many sexually reproducing organisms. Despite this crucial function, rates of recombination are highly variable within and between taxa, and the genetic basis of this variation remains poorly understood. Here, we exploit natural variation in the inbred, sequenced lines of the Drosophila melanogaster Genetic Reference Panel (DGRP) to map genetic variants affecting recombination rate. We used a two-step crossing scheme and visible markers to measure rates of recombination in a 33 cM interval on the X chromosome and in a 20.4 cM interval on chromosome 3R for 205 DGRP lines. Though we cannot exclude that some biases exist due to viability effects associated with the visible markers used in this study, we find ~2-fold variation in recombination rate among lines. Interestingly, we further find that recombination rates are uncorrelated between the two chromosomal intervals. We performed a genome-wide association study to identify genetic variants associated with recombination rate in each of the two intervals surveyed. We refined our list of candidate variants and genes associated with recombination rate variation and selected twenty genes for functional assessment. We present strong evidence that five genes are likely to contribute to natural variation in recombination rate in D. melanogaster; these genes lie outside the canonical meiotic recombination pathway. We also find a weak effect of Wolbachia infection on recombination rate and we confirm the interchromosomal effect. Our results highlight the magnitude of population variation in recombination rate present in D. melanogaster and implicate new genetic factors mediating natural variation in this quantitative trait."
+  },
+  "34074789": {
+   "title": "Genetic basis of variation in cocaine and methamphetamine consumption in outbred populations of Drosophila melanogaster.",
+   "abstract": "We used Drosophila melanogaster to map the genetic basis of naturally occurring variation in voluntary consumption of cocaine and methamphetamine. We derived an outbred advanced intercross population (AIP) from 37 sequenced inbred wild-derived lines of the Drosophila melanogaster Genetic Reference Panel (DGRP), which are maximally genetically divergent, have minimal residual heterozygosity, are not segregating for common inversions, and are not infected with Wolbachia pipientis We assessed consumption of sucrose, methamphetamine-supplemented sucrose, and cocaine-supplemented sucrose and found considerable phenotypic variation for consumption of both drugs, in both sexes. We performed whole-genome sequencing and extreme quantitative trait locus (QTL) mapping on the top 10% of consumers for each replicate, sex, and condition and an equal number of randomly selected flies. We evaluated changes in allele frequencies among high consumers and control flies and identified 3,033 variants significantly (P < 1.9 × 10-8) associated with increased consumption, located in or near 1,962 genes. Many of these genes are associated with nervous system development and function, and 77 belong to a known gene-gene interaction subnetwork. We assessed the effects of RNA interference (RNAi) on drug consumption for 22 candidate genes; 17 had a significant effect in at least one sex. We constructed allele-specific AIPs that were homozygous for alternative candidate alleles for 10 single-nucleotide polymorphisms (SNPs) and measured average consumption for each population; 9 SNPs had significant effects in at least one sex. The genetic basis of voluntary drug consumption in Drosophila is polygenic and implicates genes with human orthologs and associated variants with sex- and drug-specific effects."
+  }
+ },
+ "existing_pmids": [
+  "24714809",
+  "27035832"
+ ]
+}

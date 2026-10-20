@@ -1,0 +1,69 @@
+{
+ "question": "Through which physiological routes can starvation resistance evolve, according to artificial selection studies in Drosophila?",
+ "answer": "Artificial selection studies indicate that starvation resistance can evolve through **increased energy reserves**—especially storing more lipid and carbohydrate, which together predict resistance particularly well. In one comparison of 43 populations evolved under different selection protocols, total stored energy was very strongly associated with starvation resistance (R² = 0.99); the authors concluded that genetically increased storage of both lipids and carbohydrates underlay the response [PMID:9754535].\n\nThe route need not be identical in every population: studies of wild-derived flies associate greater starvation resistance with lipid storage and use, while other lines show variation in carbohydrate as well as lipid reserves [PMID:21983144]. Artificial selection also produced starvation resistance as a correlated response to selection on several other stress traits, suggesting that different selection histories can reach it through partly distinct mechanisms; that study did not identify the physiological basis of each response [PMID:16033550].\n\n**Bottom line:** increased fuel reserves—often lipid, and potentially carbohydrate too—are the clearest physiological route supported by these studies. The evidence retrieved does not establish a single universal route or resolve contributions such as reduced energy expenditure.\n\n### References\n- Djawdan, 1998. “Metabolic reserves and evolved stress resistance in *Drosophila melanogaster*.” [PMID:9754535]\n- Bubliy, 2005. “Correlated responses to selection for stress resistance and longevity in a laboratory population of *Drosophila melanogaster*.” [PMID:16033550]\n- Parkash, 2012. “Trade-off of energy metabolites as well as body color phenotypes for starvation and desiccation resistance in montane populations of *Drosophila melanogaster*.” [PMID:21983144]",
+ "trace": [
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila artificial selection starvation resistance physiological mechanisms routes evolved energy water metabolism\",\"max_results\":8}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila selection for starvation resistance lipid glycogen water content\",\"max_results\":10}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila artificial selection starvation resistance selection lines physiological correlated response\",\"max_results\":10}",
+   "error": null
+  },
+  {
+   "tool": "fetch_abstracts",
+   "arguments": "{\"pmids\":[\"9754535\",\"16033550\",\"22237303\",\"21983144\",\"37278586\"]}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [
+  "9754535",
+  "21983144",
+  "16033550"
+ ],
+ "fetched_pmids": [
+  "9754535",
+  "16033550",
+  "22237303",
+  "21983144",
+  "37278586"
+ ],
+ "ungrounded_citations": [],
+ "llm_requests": 5,
+ "hit_step_limit": false,
+ "seconds": 16.8,
+ "abstracts": {
+  "9754535": {
+   "title": "Metabolic reserves and evolved stress resistance in Drosophila melanogaster.",
+   "abstract": "We have examined starvation and desiccation resistance in 43 outbred populations of Drosophila melanogaster that have diverged from a common ancestral population as a result of a variety of defined selection protocols. The populations differ up to 8.5-fold in desiccation resistance and up to 10-fold in starvation resistance. We used these populations to search for evolved physiological changes that might explain the differences in stress resistance. We examined two hypotheses for increased stress resistance that had been proposed previously in the literature: (1) that increments in starvation resistance are principally the result of differential lipid accumulation, and (2) that changes in glycogen accumulation play a role in evolved increases in resistance to desiccation stress. By quantifying desiccation resistance, starvation resistance, lipid content, and carbohydrate content in each of our populations of flies, we were able to demonstrate strong correlations between the capacity of the flies to resist starvation and the quantity of lipid or carbohydrate that the flies had stored. The strongest correlation (R2 = 0.99) was observed when the total energy content of both the lipid and carbohydrate stores was regressed against starvation resistance. These results demonstrate that the flies responded to selection for starvation resistance through a genetically determined increase in both lipid and carbohydrate storage. Similar analyses of the correlation between lipid storage or total energy storage and desiccation resistance revealed no significant correlations. Carbohydrate storage was significantly correlated with desiccation resistance in female but not in male flies. These results suggest that different forms of stress are resisted with distinct physiological mechanisms and that the evolutionary response of the flies to stress selection is specific to the stress imposed."
+  },
+  "16033550": {
+   "title": "Correlated responses to selection for stress resistance and longevity in a laboratory population of Drosophila melanogaster.",
+   "abstract": "Laboratory studies on Drosophila have revealed that resistance to one environmental stress often correlates with resistance to other stresses. There is also evidence on genetic correlations between stress resistance, longevity and other fitness-related traits. The present work investigates these associations using artificial selection in Drosophila melanogaster. Adult flies were selected for increased survival after severe cold, heat, desiccation and starvation stresses as well as increased heat-knockdown time and lifespan (CS, HS, DS, SS, KS and LS line sets, respectively). The number of selection generations was 11 for LS, 27 for SS and 21 for other lines, with selection intensity being around 0.80. For each set of lines, the five stress-resistance parameters mentioned above as well as longevity (in a nonstressful environment) were estimated. In addition, preadult developmental time, early age productivity and thorax length were examined in all lines reared under nonstressful conditions. Comparing the selection lines with unselected control revealed clear-cut direct selection responses for the stress-resistance traits. Starvation resistance increased as correlated response in all sets of selection lines, with the exception of HS. Positive correlated responses were also found for survival after cold shock (HS and DS) and heat shock (KS and DS). With regard to values of resistance across different stress assays, the HS and KS lines were most similar. The resistance values of the SS lines were close to those of the LS lines and tended to be the lowest among all selection lines. Developmental time was extended in the SS and KS lines, whereas the LS lines showed a reduction in thorax length. The results indicate a possibility of different multiple-stress-resistance mechanisms for the examined traits and fitness costs associated with stress resistance and longevity."
+  },
+  "22237303": {
+   "title": "Divergence of larval resource acquisition for water conservation and starvation resistance in Drosophila melanogaster.",
+   "abstract": "Laboratory selection experiments have evidenced storage of energy metabolites in adult flies of desiccation and starvation resistant strains of D. melanogaster but resource acquisition during larval stages has received lesser attention. For wild populations of D. melanogaster, it is not clear whether larvae acquire similar or different energy metabolites for desiccation and starvation resistance. We tested the hypothesis whether larval acquisition of energy metabolites is consistent with divergence of desiccation and starvation resistance in darker and lighter isofemale lines of D. melanogaster. Our results are interesting in several respects. First, we found contrasting patterns of larval resource acquisition, i.e., accumulation of higher carbohydrates during 3rd instar larval stage of darker flies versus higher levels of triglycerides in 1st and 2nd larval instars of lighter flies. Second, 3rd instar larvae of darker flies showed ~40 h longer duration of development at 21°C; and greater accumulation of carbohydrates (trehalose and glycogen) in fed larvae as compared with larvae non-fed after 150 h of egg laying. Third, darker isofemale lines have shown significant increase in total water content (18%); hemolymph (86%) and dehydration tolerance (11%) as compared to lighter isofemale lines. Loss of hemolymph water under desiccation stress until death was significantly higher in darker as compared to lighter isofemale lines but tissue water loss was similar. Fourth, for larvae of darker flies, about 65% energy content is contributed by carbohydrates for conferring greater desiccation resistance while the larvae of lighter flies acquire 2/3 energy from lipids for sustaining starvation resistance; and such energy differences persist in the newly eclosed flies. Thus, larval stages of wild-caught darker and lighter flies have evolved independent physiological processes for the accumulation of energy metabolites to cope with desiccation or starvation stress."
+  },
+  "21983144": {
+   "title": "Trade-off of energy metabolites as well as body color phenotypes for starvation and desiccation resistance in montane populations of Drosophila melanogaster.",
+   "abstract": "Storage of energy metabolites has been investigated in different sets of laboratory selected desiccation or starvation resistant lines but few studies have examined such changes in wild-caught populations of Drosophila melanogaster. In contrast to parallel selection of desiccation and starvation tolerance under laboratory selection experiments, opposite clines were observed in wild populations of D. melanogaster. If resistance to desiccation and starvation occurs in opposite directions under field conditions, we may expect a trade-off for energy metabolites but such correlated changes are largely unknown. We tested whether there is a trade-off for storage as well as actual utilization of carbohydrates (trehalose and glycogen), lipids and proteins in D. melanogaster populations collected from different altitudes (512-2500 m). For desiccation resistance, darker flies (>50% body melanization) store more body water content and endure greater loss of water (higher dehydration tolerance) as compared to lighter flies (<30% body melanization). Based on within population analysis, we found evidence for coadapted phenotypes i.e. darker flies store and actually utilize more carbohydrates to confer greater desiccation resistance. In contrast, higher starvation resistance in lighter flies is associated with storage and actual utilization of greater lipid amount. However, darker and lighter flies did not vary in the rate of utilization of carbohydrates under desiccation stress; and of lipids under starvation stress. Thus, we did not find support for the hypothesis that a lower rate of utilization of energy metabolites may contribute to greater stress resistance. Further, for increased desiccation resistance of darker flies, about two-third of total energy budget is provided by carbohydrates. By contrast, lighter flies derive about 66% of total energy content from lipids which sustain higher starvation tolerance. Our results support evolutionary trade-off for storage as well as utilization of energy metabolites for desiccation versus starvation resistance in D. melanogaster."
+  },
+  "37278586": {
+   "title": "Building Bridges from Genome to Physiology Using Machine Learning and Drosophila Experimental Evolution.",
+   "abstract": "Drosophila experimental evolution, with its well-defined selection protocols, has long supplied useful genetic material for the analysis of functional physiology. While there is a long tradition of interpreting the effects of large-effect mutants physiologically, identifying and interpreting gene-to-phenotype relationships has been challenging in the genomic era, with many labs not resolving how physiological traits are affected by multiple genes throughout the genome. Drosophila experimental evolution has demonstrated that multiple phenotypes change because of the evolution of many loci across the genome, creating the scientific challenge of sifting out differentiated but noncausal loci for individual characters. The fused lasso additive model method allows us to infer some of the differentiated loci that have relatively greater causal effects on the differentiation of specific phenotypes. The experimental material that we use in the present study comes from 50 populations that have been selected for different life histories and levels of stress resistance. Differentiation of cardiac robustness, starvation resistance, desiccation resistance, lipid content, glycogen content, water content, and body masses was assayed among 40-50 of these experimentally evolved populations. Through the fused lasso additive model, we combined physiological analyses from eight parameters with whole-body pooled-seq genomic data to identify potentially causally linked genomic regions. We have identified approximately 2,176 significantly differentiated 50-kb genomic windows among our 50 populations, with 142 of those identified genomic regions that are highly likely to have a causal effect connecting specific genome sites to specific physiological characters."
+  }
+ },
+ "existing_pmids": [
+  "16033550",
+  "21983144",
+  "9754535"
+ ]
+}

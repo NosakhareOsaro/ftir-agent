@@ -1,0 +1,50 @@
+{
+ "question": "What is micro-environmental plasticity, and is it genetically variable in the DGRP?",
+ "answer": "**Micro-environmental plasticity** is the variation in phenotype among individuals with the same genotype raised under the same broad environmental conditions. In other words, it describes how much small-scale environmental differences or stochastic effects contribute to variation within a genotype [PMID:25943032].\n\n**Yes—it's genetically variable in the DGRP.** A study of three quantitative traits found substantial genetic variation in micro-environmental plasticity across DGRP lines, with broad-sense heritabilities as large as or larger than those of trait means. The extent of plasticity was trait-specific [PMID:25943032].\n\n### References\n- Morgante F, 2015. “Genetic Architecture of Micro-Environmental Plasticity in *Drosophila melanogaster*.” [PMID:25943032]",
+ "trace": [
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila DGRP micro-environmental plasticity genetic variation\"}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila melanogaster micro-environmental sensitivity developmental noise DGRP\"}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila genetic reference panel environmental variance phenotypic variability developmental stability\"}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila micro-environmental plasticity genotype environmental variance\"}",
+   "error": null
+  },
+  {
+   "tool": "fetch_abstracts",
+   "arguments": "{\"pmids\":[\"25943032\"]}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [
+  "25943032"
+ ],
+ "fetched_pmids": [
+  "25943032"
+ ],
+ "ungrounded_citations": [],
+ "llm_requests": 6,
+ "hit_step_limit": false,
+ "seconds": 18.6,
+ "abstracts": {
+  "25943032": {
+   "title": "Genetic Architecture of Micro-Environmental Plasticity in Drosophila melanogaster.",
+   "abstract": "Individuals of the same genotype do not have the same phenotype for quantitative traits when reared under common macro-environmental conditions, a phenomenon called micro-environmental plasticity. Genetic variation in micro-environmental plasticity is assumed in models of the evolution of phenotypic variance, and is important in applied breeding and personalized medicine. Here, we quantified genetic variation for micro-environmental plasticity for three quantitative traits in the inbred, sequenced lines of the Drosophila melanogaster Genetic Reference Panel. We found substantial genetic variation for micro-environmental plasticity for all traits, with broad sense heritabilities of the same magnitude or greater than those of trait means. Micro-environmental plasticity is not correlated with residual segregating variation, is trait-specific, and has genetic correlations with trait means ranging from zero to near unity. We identified several candidate genes associated with micro-environmental plasticity of startle response, including Drosophila Hsp90, setting the stage for future genetic dissection of this phenomenon."
+  }
+ },
+ "existing_pmids": [
+  "25943032"
+ ]
+}

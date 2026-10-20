@@ -1,0 +1,13 @@
+{
+ "support": [
+  {
+   "pmid": "15374818",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract reports progressive hypoactivity and suggests slower energy-resource mobilization explains extended survival."
+  }
+ ],
+ "accuracy": {
+  "score": 1,
+  "reason": "Correctly reports increased starvation survival, but omits the key loss of starvation-induced hyperactivity; the precise 50% claim is not in the reference."
+ }
+}

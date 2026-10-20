@@ -1,0 +1,35 @@
+{
+ "question": "What happens to starvation survival when the adipokinetic hormone (AKH)-producing cells are ablated in Drosophila?",
+ "answer": "Ablating the AKH-producing cells makes flies survive starvation **about 50% longer** than wild-type controls. The authors suggest this is because the ablated flies mobilize energy reserves more slowly; they also become progressively less active [PMID:15374818].\n\n### References\n- Isabel G, 2005. “AKH-producing neuroendocrine cell ablation decreases trehalose and induces behavioral changes in *Drosophila*.”",
+ "trace": [
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila ablation adipokinetic hormone producing cells starvation survival\",\"max_results\":10}",
+   "error": null
+  },
+  {
+   "tool": "fetch_abstracts",
+   "arguments": "{\"pmids\":[\"15374818\"]}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [
+  "15374818"
+ ],
+ "fetched_pmids": [
+  "15374818"
+ ],
+ "ungrounded_citations": [],
+ "llm_requests": 3,
+ "hit_step_limit": false,
+ "seconds": 9.3,
+ "abstracts": {
+  "15374818": {
+   "title": "AKH-producing neuroendocrine cell ablation decreases trehalose and induces behavioral changes in Drosophila.",
+   "abstract": "Adipokinetic hormone (AKH) is a metabolic neuropeptide principally known for its mobilization of energy substrates, notably lipid and trehalose during energy-requiring activities, such as flight and locomotion. Drosophila melanogaster AKH cell localization in corpora cardiaca, as in other insect species, was confirmed by immunoreactivity and by a genetic approach using the UAS/GAL4 system. To assess AKH general physiological rules, we ablated AKH endocrine cells by specifically driving the expression of apoptosis transgenes in AKH cells. Trehalose levels were decreased in larvae and starved adults, when the stimulation by AKH of the production of trehalose from fat body glycogen is no longer possible. Moreover, we show that these adults without AKH cells become progressively hypoactive. Finally, under starvation conditions, those hypoactive AKH-knockout cell flies survived approximately 50% longer than control wild-type flies, suggesting that the slower rate at which AKH-ablated flies mobilize their energy resources extends their survival."
+  }
+ },
+ "existing_pmids": [
+  "15374818"
+ ]
+}

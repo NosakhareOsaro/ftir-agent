@@ -1,0 +1,29 @@
+{
+ "question": "Which published study showed that FTIR spectra predict lifespan across DGRP lines? Summarise its findings.",
+ "answer": "I couldn’t identify the study in PubMed with searches for DGRP, FTIR, and lifespan. Since I can’t verify a relevant abstract, I can’t responsibly name the paper or summarize its findings from the available evidence. If you share a title, author, or DOI, I can check it and summarize the study.\n\n**References**  \nNone.",
+ "trace": [
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila DGRP FTIR lifespan prediction infrared spectra lifespan lines\",\"max_results\":10}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila melanogaster Fourier transform infrared spectroscopy lifespan genetic reference panel\",\"max_results\":10}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"infrared spectroscopy predict longevity Drosophila lifespan\",\"max_results\":10}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [],
+ "fetched_pmids": [],
+ "ungrounded_citations": [],
+ "llm_requests": 4,
+ "hit_step_limit": false,
+ "seconds": 12.0,
+ "abstracts": {},
+ "existing_pmids": []
+}

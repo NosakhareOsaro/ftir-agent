@@ -1,0 +1,7 @@
+{
+ "support": [],
+ "accuracy": {
+  "score": 2,
+  "reason": "Correctly declines to predict human BMI and explains that the model predicts Drosophila starvation resistance, not human BMI."
+ }
+}

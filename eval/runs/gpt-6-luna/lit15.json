@@ -1,0 +1,45 @@
+{
+ "question": "Did SNPs associated with life-history traits in the outbred Flyland population replicate in the DGRP?",
+ "answer": "No. In a comparison of three life-history traits, **none of the SNPs associated with the traits in Flyland replicated in the DGRP, and none of the DGRP-associated SNPs replicated in Flyland**. The study reported that the traits were highly polygenic in both populations; many Flyland-associated SNPs nevertheless participated in epistatic interactions in the DGRP. [PMID:22949659]\n\n### References\n- Huang W, 2012. *Epistasis dominates the genetic architecture of Drosophila quantitative traits.* [PMID:22949659]",
+ "trace": [
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Flyland outbred population SNP life-history traits DGRP replication\",\"max_results\":8}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila Flyland DGRP life history GWAS SNP\",\"max_results\":10}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila outbred population SNPs life-history traits replication Drosophila Genetic Reference Panel\",\"max_results\":10}",
+   "error": null
+  },
+  {
+   "tool": "fetch_abstracts",
+   "arguments": "{\"pmids\":[\"22949659\"]}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [
+  "22949659"
+ ],
+ "fetched_pmids": [
+  "22949659"
+ ],
+ "ungrounded_citations": [],
+ "llm_requests": 5,
+ "hit_step_limit": false,
+ "seconds": 11.4,
+ "abstracts": {
+  "22949659": {
+   "title": "Epistasis dominates the genetic architecture of Drosophila quantitative traits.",
+   "abstract": "Epistasis-nonlinear genetic interactions between polymorphic loci-is the genetic basis of canalization and speciation, and epistatic interactions can be used to infer genetic networks affecting quantitative traits. However, the role that epistasis plays in the genetic architecture of quantitative traits is controversial. Here, we compared the genetic architecture of three Drosophila life history traits in the sequenced inbred lines of the Drosophila melanogaster Genetic Reference Panel (DGRP) and a large outbred, advanced intercross population derived from 40 DGRP lines (Flyland). We assessed allele frequency changes between pools of individuals at the extremes of the distribution for each trait in the Flyland population by deep DNA sequencing. The genetic architecture of all traits was highly polygenic in both analyses. Surprisingly, none of the SNPs associated with the traits in Flyland replicated in the DGRP and vice versa. However, the majority of these SNPs participated in at least one epistatic interaction in the DGRP. Despite apparent additive effects at largely distinct loci in the two populations, the epistatic interactions perturbed common, biologically plausible, and highly connected genetic networks. Our analysis underscores the importance of epistasis as a principal factor that determines variation for quantitative traits and provides a means to uncover genetic networks affecting these traits. Knowledge of epistatic networks will contribute to our understanding of the genetic basis of evolutionarily and clinically important traits and enhance predictive ability at an individualized level in medicine and agriculture."
+  }
+ },
+ "existing_pmids": [
+  "22949659"
+ ]
+}

@@ -11,7 +11,11 @@ Configured from the environment (or a .env file):
   LLM_BASE_URL      default: the Gemini endpoint above
   LLM_API_KEY       API key (GEMINI_API_KEY is also accepted)
   LLM_MODEL         default: gemini-3.8-flash
-  LLM_MIN_INTERVAL  seconds between requests, to stay under free-tier RPM (default 6)
+  LLM_MIN_INTERVAL  seconds between requests, to stay under free-tier RPM (default 13 = under the 5 RPM free tier)
+  LLM_TEMPERATURE   optional; omitted when unset (some models, e.g. gpt-6-luna,
+                    only accept their default)
+  LLM_REASONING_EFFORT  optional; sent as reasoning_effort when set (gpt-6-luna
+                    needs "none" to use tools on /chat/completions)
 """
 
 import os
@@ -37,8 +41,11 @@ class ChatClient:
         self.api_key = api_key or os.getenv("LLM_API_KEY") or os.getenv("GEMINI_API_KEY")
         self.model = model or os.getenv("LLM_MODEL") or DEFAULT_MODEL
         if min_interval is None:
-            min_interval = float(os.getenv("LLM_MIN_INTERVAL", "6"))
+            min_interval = float(os.getenv("LLM_MIN_INTERVAL", "13"))
         self.min_interval = min_interval
+        temp = os.getenv("LLM_TEMPERATURE")
+        self.temperature = float(temp) if temp else None
+        self.reasoning_effort = os.getenv("LLM_REASONING_EFFORT") or None
         self.timeout = timeout
         self.n_requests = 0
         self._last = 0.0
@@ -49,9 +56,13 @@ class ChatClient:
                 "and put LLM_API_KEY=... in a .env file."
             )
 
-    def chat(self, messages, tools=None, temperature=0.0):
+    def chat(self, messages, tools=None):
         """Send one chat request; return the assistant message dict."""
-        body = {"model": self.model, "messages": messages, "temperature": temperature}
+        body = {"model": self.model, "messages": messages}
+        if self.temperature is not None:
+            body["temperature"] = self.temperature
+        if self.reasoning_effort:
+            body["reasoning_effort"] = self.reasoning_effort
         if tools:
             body["tools"] = tools
             body["tool_choice"] = "auto"

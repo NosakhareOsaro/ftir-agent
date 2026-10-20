@@ -27,7 +27,7 @@ documented limitations.
 ```mermaid
 flowchart LR
     U[User / Streamlit] --> L[agent/loop.py<br/>tool-calling loop]
-    L <--> M[LLM<br/>Gemini free tier or Ollama<br/>OpenAI-compatible API]
+    L <--> M[LLM<br/>OpenAI, Gemini or Ollama<br/>OpenAI-compatible API]
     L --> T[agent/tools.py]
     T --> S[search_pubmed] --> E[(NCBI E-utilities)]
     T --> F[fetch_abstracts] --> E
@@ -93,10 +93,37 @@ and report the agreement below.
 
 ### Results
 
-<!-- Paste the summary table from eval/results.md here after running the eval. -->
-*Not yet run.* See `eval/results.md`.
+Agent and judge: `gpt-6-luna` (OpenAI), one run, 25 questions. A full run costs about
+$0.10. Full per-question table: [`eval/results.md`](eval/results.md).
 
-Judge–human agreement on a hand-audited sample of N verdicts: _TBD_.
+| Slice | n | Citations exist | Citations grounded | Citations supported (judge) | Key paper retrieved | Required facts | Fully correct (judge) |
+|---|---|---|---|---|---|---|---|
+| **all** | 25 | **100%** (25/25) | **100%** (25/25) | **84%** (21/25) | 75% (12/16) | 86% | **76%** (19/25) |
+| literature | 16 | 100% | 100% | 83% | 75% | 81% | 62% (10/16) |
+| taxonomy | 4 | 100% | 100% | 100% | n/a | 92% | 100% |
+| model | 3 | n/a | n/a | n/a | n/a | 100% | 100% |
+| negative | 2 | n/a | n/a | n/a | n/a | 100% | 100% |
+
+**What the numbers say:**
+- **No fabricated citations.** Every cited PMID is real, and every one was fetched and
+  read in that run. Neither trap question (a non-existent study, an out-of-scope request)
+  produced invented content.
+- **The remaining citation issues are overstatement, not invention.** All 4 non-supported
+  citations were rated PARTIAL: the claim went somewhat beyond the abstract.
+- **Failures are retrieval failures.** In the 3 questions scored 0, the agent wrote long,
+  over-specific PubMed queries ("…205 lines Freeze 2…"). PubMed ANDs every term, so these
+  returned nothing or the wrong papers. The agent then correctly said it could not find
+  the evidence rather than guessing, but the answer was still unhelpful. Short queries
+  find all of these papers.
+
+**Judge reliability.** I hand-checked all 25 citation verdicts
+([`eval/judge_audit.md`](eval/judge_audit.md)). Agreement with the judge: _TBD_ / 25.
+
+**Two harness bugs found while validating the eval.** (1) Citations placed after the full
+stop ("…claim. [PMID:x]") were split away from their claim, so the judge saw an empty
+claim and marked correct citations unsupported. This took support from 72% to 84% once
+fixed. (2) The judge sometimes returned two verdicts for one citation; scoring now keeps
+one per cited paper (the stricter). Both have regression tests.
 
 ## Running it
 
@@ -123,6 +150,14 @@ redistributed; `model/artifacts/` and `model/examples/` are gitignored. Without 
 literature and taxonomy tools still work, and the model tests run on a synthetic model.
 
 ## Limitations and what I'd do next
+
+- **Query formulation is the weakest link.** Next step: have the agent start with 3–5 key
+  terms and broaden on zero hits, then measure it on a *new* question set. Tuning against
+  these 25 questions would overfit them.
+- **The agent and the judge are the same model.** It may go easy on its own style of answer.
+  Next step: judge with a different model family.
+- **The judge runs at the model's default temperature** (gpt-6-luna only accepts its default
+  temperature), so its verdicts can vary between runs.
 
 - **The judge is an LLM.** It can be wrong, so its verdicts were partly hand-audited. Next
   steps: a second judge model, and more human-labelled verdicts.

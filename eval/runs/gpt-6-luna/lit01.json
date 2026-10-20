@@ -1,0 +1,42 @@
+{
+ "question": "What is the Drosophila melanogaster Genetic Reference Panel (DGRP) and how were its lines derived?",
+ "answer": "The **Drosophila melanogaster Genetic Reference Panel (DGRP)** is a community resource of **205 inbred fly lines**, each with a whole-genome sequence, used to study natural genetic variation and its relationship to traits. The lines were derived from **a single wild population collected in Raleigh, North Carolina**, then inbred to create strains that can be compared across studies. [PMID:22318601] [PMID:28834395]\n\nIn other words, the panel represents genetic variation sampled from one natural population—not a set of lines produced by crossing different laboratory strains. The 2012 abstract describes the lines as “fully sequenced inbred lines derived from a natural population”; the review specifies the population’s location and the panel’s size. [PMID:22318601] [PMID:28834395]\n\n### References\n- Mackay TF, 2012. *The Drosophila melanogaster Genetic Reference Panel.* [PMID:22318601]\n- Mackay TFC, 2018. *Charting the genotype-phenotype map: lessons from the Drosophila melanogaster Genetic Reference Panel.* [PMID:28834395]",
+ "trace": [
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila melanogaster Genetic Reference Panel DGRP lines derived inbred Raleigh\"}",
+   "error": null
+  },
+  {
+   "tool": "fetch_abstracts",
+   "arguments": "{\"pmids\":[\"22318601\",\"28834395\"]}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [
+  "22318601",
+  "28834395"
+ ],
+ "fetched_pmids": [
+  "22318601",
+  "28834395"
+ ],
+ "ungrounded_citations": [],
+ "llm_requests": 3,
+ "hit_step_limit": false,
+ "seconds": 13.1,
+ "abstracts": {
+  "22318601": {
+   "title": "The Drosophila melanogaster Genetic Reference Panel.",
+   "abstract": "A major challenge of biology is understanding the relationship between molecular genetic variation and variation in quantitative traits, including fitness. This relationship determines our ability to predict phenotypes from genotypes and to understand how evolutionary forces shape variation within and between species. Previous efforts to dissect the genotype-phenotype map were based on incomplete genotypic information. Here, we describe the Drosophila melanogaster Genetic Reference Panel (DGRP), a community resource for analysis of population genomics and quantitative traits. The DGRP consists of fully sequenced inbred lines derived from a natural population. Population genomic analyses reveal reduced polymorphism in centromeric autosomal regions and the X chromosome, evidence for positive and negative selection, and rapid evolution of the X chromosome. Many variants in novel genes, most at low frequency, are associated with quantitative traits and explain a large fraction of the phenotypic variance. The DGRP facilitates genotype-phenotype mapping using the power of Drosophila genetics."
+  },
+  "28834395": {
+   "title": "Charting the genotype-phenotype map: lessons from the Drosophila melanogaster Genetic Reference Panel.",
+   "abstract": "Understanding the genetic architecture (causal molecular variants, their effects, and frequencies) of quantitative traits is important for precision agriculture and medicine and predicting adaptive evolution, but is challenging in most species. The Drosophila melanogaster Genetic Reference Panel (DGRP) is a collection of 205 inbred strains with whole genome sequences derived from a single wild population in Raleigh, NC, USA. The large amount of quantitative genetic variation, lack of population structure, and rapid local decay of linkage disequilibrium in the DGRP and outbred populations derived from DGRP lines present a favorable scenario for performing genome-wide association (GWA) mapping analyses to identify candidate causal genes, polymorphisms, and pathways affecting quantitative traits. The many GWA studies utilizing the DGRP have revealed substantial natural genetic variation for all reported traits, little evidence for variants with large effects but enrichment for variants with low P-values, and a tendency for lower frequency variants to have larger effects than more common variants. The variants detected in the GWA analyses rarely overlap those discovered using mutagenesis, and often are the first functional annotations of computationally predicted genes. Variants implicated in GWA analyses typically have sex-specific and genetic background-specific (epistatic) effects, as well as pleiotropic effects on other quantitative traits. Studies in the DGRP reveal substantial genetic control of environmental variation. Taking account of genetic architecture can greatly improve genomic prediction in the DGRP. These features of the genetic architecture of quantitative traits are likely to apply to other species, including humans. WIREs Dev Biol 2018, 7:e289. doi: 10.1002/wdev.289 This article is categorized under: Invertebrate Organogenesis > Flies."
+  }
+ },
+ "existing_pmids": [
+  "22318601",
+  "28834395"
+ ]
+}

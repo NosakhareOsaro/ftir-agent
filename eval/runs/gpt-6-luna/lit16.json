@@ -1,0 +1,35 @@
+{
+ "question": "What is the main conclusion of the Rion & Kawecki review on the evolutionary biology of starvation resistance in Drosophila?",
+ "answer": "The review’s main conclusion is that starvation resistance in *Drosophila* reflects a broader “survival mode”: flies can evolve or induce greater resistance, typically through increased lipid storage and altered metabolism, alongside reduced reproduction. These shifts often coincide with greater resistance to desiccation and oxidative stress and with longer development and lifespan. The authors emphasize that although the genetic and physiological mechanisms were becoming clearer, the ecological reasons for natural variation in starvation resistance remained poorly understood. [PMID:17714282]\n\n**References**\n- Rion S, 2007. *Evolutionary biology of starvation resistance: what we have learned from Drosophila.*",
+ "trace": [
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Rion Kawecki evolutionary biology starvation resistance Drosophila review\",\"max_results\":5}",
+   "error": null
+  },
+  {
+   "tool": "fetch_abstracts",
+   "arguments": "{\"pmids\":[\"17714282\"]}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [
+  "17714282"
+ ],
+ "fetched_pmids": [
+  "17714282"
+ ],
+ "ungrounded_citations": [],
+ "llm_requests": 3,
+ "hit_step_limit": false,
+ "seconds": 7.0,
+ "abstracts": {
+  "17714282": {
+   "title": "Evolutionary biology of starvation resistance: what we have learned from Drosophila.",
+   "abstract": "Most animals face periods of food shortage and are thus expected to evolve adaptations enhancing starvation resistance (SR). Most of our knowledge of the genetic and physiological bases of those adaptations, their evolutionary correlates and trade-offs, and patterns of within- and among-population variation, comes from studies on Drosophila. In this review, we attempt to synthesize the various facets of evolutionary biology of SR emerging from those studies. Heritable variation for SR is ubiquitous in Drosophila populations, allowing for large responses to experimental selection. Individual flies can also inducibly increase their SR in response to mild nutritional stress (dietary restriction). Both the evolutionary change and the physiological plasticity involve increased accumulation of lipids, changes in carbohydrate and lipid metabolism and reduction in reproduction. They are also typically associated with greater resistance to desiccation and oxidative stress, and with prolonged development and lifespan. These responses are increasingly seen as facets of a shift of the physiology towards a 'survival mode', which helps the animal to survive hard times. The last decade has seen a great progress in revealing the molecular bases of induced responses to starvation, and the first genes contributing to genetic variation in SR have been identified. In contrast, little progress has been made in understanding the ecological significance of SR in Drosophila; in particular it remains unclear to what extent geographical variation in SR reflect differences in natural selection acting on this trait rather than correlated responses to selection on other traits. Drosophila offers a unique opportunity for an integrated study of the manifold aspects of adaptation to nutritional stress. Given that at least some major molecular mechanisms of response to nutritional stress seem common to animals, the insights from Drosophila are likely to apply more generally than just to dipterans or insects."
+  }
+ },
+ "existing_pmids": [
+  "17714282"
+ ]
+}

@@ -3,8 +3,8 @@ __pycache__/
 *.pyc
 .pytest_cache/
 .env
+.env.bak*
 .DS_Store
 # Derived from unpublished lab data: do not publish without the lab's OK
 model/artifacts/
 model/examples/
-.pytest_cache/

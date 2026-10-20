@@ -1,0 +1,13 @@
+{
+ "support": [
+  {
+   "pmid": "22949659",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract reports no SNP replication between populations, high polygenicity, and most associated SNPs participating in DGRP epistatic interactions."
+  }
+ ],
+ "accuracy": {
+  "score": 2,
+  "reason": "Correctly reports no replication in either direction and notes that many Flyland-associated SNPs participated in DGRP epistatic interactions."
+ }
+}
