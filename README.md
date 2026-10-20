@@ -116,8 +116,13 @@ $0.10. Full per-question table: [`eval/results.md`](eval/results.md).
   the evidence rather than guessing, but the answer was still unhelpful. Short queries
   find all of these papers.
 
-**Judge reliability.** I hand-checked all 25 citation verdicts
-([`eval/judge_audit.md`](eval/judge_audit.md)). Agreement with the judge: _TBD_ / 25.
+**Judge reliability.** A model from a different family (Claude, Anthropic) independently
+reviewed all 25 citation verdicts ([`eval/judge_audit.md`](eval/judge_audit.md)). It agreed
+with the judge on **21/25 (84%)**. The judge was too strict on 3 grouped citations, where
+co-cited papers each covered part of the sentence, and too lenient on 1, where an abstract
+reported obesity only for a double mutant. With the second reviewer's verdicts, citation
+support is 23/25 (92%). The judge also changed one verdict between runs. This is a
+cross-model check, not a human audit; the file has a column for one.
 
 **Two harness bugs found while validating the eval.** (1) Citations placed after the full
 stop ("…claim. [PMID:x]") were split away from their claim, so the judge saw an empty

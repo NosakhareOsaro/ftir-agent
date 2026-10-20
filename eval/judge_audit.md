@@ -1,6 +1,12 @@
 # Judge audit: citation support
 
-For each item, read the claim and the abstract, then replace `?` with **agree** or **disagree** (with the judge's verdict).
+Judge: `gpt-6-luna` (OpenAI). **Second reviewer:** Claude (Anthropic), a different model family, reviewed every verdict. This is a cross-model check, **not** a human audit.
+
+Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part of the sentence, and together they must support all of it.
+
+**Result: second reviewer agrees on 21/25 (84%).** Judge too strict on 3 (#1, #12, #15), too lenient on 1 (#6). With the second reviewer's verdicts, support is 23/25 (92%).
+
+**Human:** replace `?` with agree/disagree to add a real hand audit.
 
 ## 1. lit01, PMID 22318601
 
@@ -10,7 +16,9 @@ For each item, read the claim and the abstract, then replace `?` with **agree** 
 
 **Judge:** PARTIAL: Supports a community resource of fully sequenced inbred lines from a natural population, but not 205 lines or Raleigh location.
 
-**Your call:** ?
+**Second reviewer (Claude):** disagree. SUPPORTED. Grouped citation: this paper supports 'sequenced inbred lines from a natural population'; the co-cited review supplies 205 lines and Raleigh, and the answer says so explicitly.
+
+**Human:** ?
 
 ---
 
@@ -22,7 +30,9 @@ For each item, read the claim and the abstract, then replace `?` with **agree** 
 
 **Judge:** SUPPORTED: Specifies 205 sequenced inbred strains from one wild Raleigh population and their use in quantitative-trait mapping.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -34,7 +44,9 @@ For each item, read the claim and the abstract, then replace `?` with **agree** 
 
 **Judge:** SUPPORTED: Reports approximately 50% infection and says Wolbachia effects on quantitative traits are rarely significant.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -46,7 +58,9 @@ For each item, read the claim and the abstract, then replace `?` with **agree** 
 
 **Judge:** SUPPORTED: Explicitly reports a weak effect of Wolbachia infection on recombination rate.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -58,7 +72,9 @@ For each item, read the claim and the abstract, then replace `?` with **agree** 
 
 **Judge:** SUPPORTED: The study found lipid-linked starvation resistance was not operative in its long-lived strains; it does not establish a general reserve mechanism.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree. The citation supports its claim, although the answer as a whole missed the question (cited a longevity-selection study).
+
+**Human:** ?
 
 ---
 
@@ -70,7 +86,9 @@ For each item, read the claim and the abstract, then replace `?` with **agree** 
 
 **Judge:** SUPPORTED: Identifies Brummer as the mammalian ATGL homolog and links its loss to obesity and impaired fat mobilization.
 
-**Your call:** ?
+**Second reviewer (Claude):** disagree. PARTIAL. The abstract states that Brummer is the ATGL homolog and matters for fat storage and mobilization, but obesity is reported only for the double Brummer + AKHR loss. 'Flies lacking Brummer accumulate excess fat' is not stated here.
+
+**Human:** ?
 
 ---
 
@@ -82,7 +100,9 @@ For each item, read the claim and the abstract, then replace `?` with **agree** 
 
 **Judge:** SUPPORTED: The abstract reports progressive hypoactivity and suggests slower energy-resource mobilization explains extended survival.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -94,7 +114,9 @@ For each item, read the claim and the abstract, then replace `?` with **agree** 
 
 **Judge:** SUPPORTED: The abstract reports R² = 0.99 for total energy and starvation resistance, and increased storage of both lipids and carbohydrates.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -106,7 +128,9 @@ For each item, read the claim and the abstract, then replace `?` with **agree** 
 
 **Judge:** SUPPORTED: Wild-derived populations linked starvation resistance with lipid storage and use; carbohydrate and lipid patterns varied across stress phenotypes.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -118,7 +142,9 @@ For each item, read the claim and the abstract, then replace `?` with **agree** 
 
 **Judge:** PARTIAL: Starvation resistance rose across most selection lines, but the abstract does not establish distinct mechanisms or say physiological bases were unidentified.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree. Borderline: 'possibility of different multiple-stress-resistance mechanisms' supports most of the claim.
+
+**Human:** ?
 
 ---
 
@@ -130,7 +156,9 @@ For each item, read the claim and the abstract, then replace `?` with **agree** 
 
 **Judge:** SUPPORTED: The abstract reports the stated correlation, methods, SNP threshold, and authors’ hypothesis about subtle relatedness rather than causal-variant tagging.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -142,7 +170,9 @@ For each item, read the claim and the abstract, then replace `?` with **agree** 
 
 **Judge:** PARTIAL: Accuracy and age-distribution results are stated; larger datasets may improve accuracy and enable wild use, but transfer concerns are not directly tested.
 
-**Your call:** ?
+**Second reviewer (Claude):** disagree. SUPPORTED. The paper's own claims (82.6%, age structure, need for larger/wild datasets) are exact; the transfer caveat is a grouped claim supported by the co-cited papers.
+
+**Human:** ?
 
 ---
 
@@ -154,7 +184,9 @@ For each item, read the claim and the abstract, then replace `?` with **agree** 
 
 **Judge:** SUPPORTED: The abstract reports the stated laboratory, semi-field, and transfer-learning accuracies and cautions about laboratory-only generalisability.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -166,7 +198,9 @@ For each item, read the claim and the abstract, then replace `?` with **agree** 
 
 **Judge:** SUPPORTED: The abstract reports leg-based accuracy of 0.73 for species and 0.77 for age groups under laboratory conditions.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -181,7 +215,9 @@ CONCLUSIONS: When using mid-infrared spectroscopy and supervised machine learnin
 
 **Judge:** PARTIAL: The abstract directly supports consistent sample handling; it studies preservation and storage, not field-relevant validation or setting transfer.
 
-**Your call:** ?
+**Second reviewer (Claude):** disagree. SUPPORTED. Grouped citation: this paper supports the sample-handling part; the co-cited papers cover setting transfer.
+
+**Human:** ?
 
 ---
 
@@ -193,7 +229,9 @@ CONCLUSIONS: When using mid-infrared spectroscopy and supervised machine learnin
 
 **Judge:** SUPPORTED: The abstract reports laboratory-colony testing and says larger datasets and wild-vector expansion are possible future improvements.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -208,7 +246,9 @@ CONCLUSIONS: This study shows how machine learning can quickly classify epidemio
 
 **Judge:** SUPPORTED: Mosquito larvae were collected in rural south-eastern Tanzania; the abstract reports no evaluation across other populations.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -220,7 +260,9 @@ CONCLUSIONS: This study shows how machine learning can quickly classify epidemio
 
 **Judge:** SUPPORTED: The abstract reports approximately 80% field species accuracy, almost 100% laboratory accuracy, and the stated age accuracies.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -232,7 +274,9 @@ CONCLUSIONS: This study shows how machine learning can quickly classify epidemio
 
 **Judge:** SUPPORTED: The abstract lists all six indices, both diets, genetic variation, and correlations with the three named stress phenotypes.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -247,7 +291,9 @@ DISCUSSION: We conclude that rapidly acquired desiccation resistance, depending 
 
 **Judge:** SUPPORTED: The abstract reports increased desiccation resistance with more desaturated hydrocarbons, but not greater total hydrocarbon amount.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -259,7 +305,9 @@ DISCUSSION: We conclude that rapidly acquired desiccation resistance, depending 
 
 **Judge:** SUPPORTED: Selected resistant flies had unchanged total surface lipids and longer-chain cuticular hydrocarbons than controls.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -271,7 +319,9 @@ DISCUSSION: We conclude that rapidly acquired desiccation resistance, depending 
 
 **Judge:** SUPPORTED: Defines within-genotype variation under common macro-environments as micro-environmental plasticity.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree. 'Stochastic effects' is a light paraphrase. Note the judge rated this same citation PARTIAL in its first run and SUPPORTED in its second.
+
+**Human:** ?
 
 ---
 
@@ -283,7 +333,9 @@ DISCUSSION: We conclude that rapidly acquired desiccation resistance, depending 
 
 **Judge:** SUPPORTED: The abstract reports no SNP replication between populations, high polygenicity, and most associated SNPs participating in DGRP epistatic interactions.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -295,7 +347,9 @@ DISCUSSION: We conclude that rapidly acquired desiccation resistance, depending 
 
 **Judge:** SUPPORTED: The abstract directly describes survival mode, lipid and metabolic changes, reduced reproduction, correlated traits, and unresolved ecological significance.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
 
@@ -307,6 +361,8 @@ DISCUSSION: We conclude that rapidly acquired desiccation resistance, depending 
 
 **Judge:** SUPPORTED: The abstract explicitly lists both D. melanogaster and D. simulans among species of the melanogaster subgroup.
 
-**Your call:** ?
+**Second reviewer (Claude):** agree
+
+**Human:** ?
 
 ---
