@@ -1,0 +1,33 @@
+{
+ "judge_version": 2,
+ "support": [
+  {
+   "passage": 1,
+   "pmid": "22318601",
+   "verdict": "PARTIAL",
+   "reason": "Supports a community resource of fully sequenced inbred lines from a natural population, but gives neither 205 lines nor Raleigh as the location."
+  },
+  {
+   "passage": 1,
+   "pmid": "28834395",
+   "verdict": "SUPPORTED",
+   "reason": "Specifies 205 inbred strains with whole-genome sequences from one wild population in Raleigh, and describes their use in quantitative-trait studies."
+  },
+  {
+   "passage": 2,
+   "pmid": "22318601",
+   "verdict": "PARTIAL",
+   "reason": "Supports fully sequenced inbred lines derived from a natural population, but does not specify Raleigh or the panel size."
+  },
+  {
+   "passage": 2,
+   "pmid": "28834395",
+   "verdict": "SUPPORTED",
+   "reason": "Specifies the panel\u2019s 205 inbred strains and their origin in a single wild Raleigh population."
+  }
+ ],
+ "accuracy": {
+  "score": 2,
+  "reason": "Correctly identifies the DGRP as a sequenced inbred-line resource from one Raleigh natural population, used to study genetic variation and traits, and notes its 205 lines."
+ }
+}

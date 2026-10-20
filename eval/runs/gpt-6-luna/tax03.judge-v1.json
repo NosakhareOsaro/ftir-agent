@@ -1,0 +1,7 @@
+{
+ "support": [],
+ "accuracy": {
+  "score": 2,
+  "reason": "Correctly gives TaxID 7173, family Culicidae, and the Anopheles gambiae species complex."
+ }
+}

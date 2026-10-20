@@ -1,21 +1,62 @@
 {
+ "judge_version": 3,
  "support": [
   {
+   "passage": 1,
    "pmid": "9754535",
    "verdict": "SUPPORTED",
-   "reason": "The abstract reports R\u00b2 = 0.99 for total energy and starvation resistance, and increased storage of both lipids and carbohydrates."
+   "reason": "The abstract reports 43 populations, R\u00b2 = 0.99 for total lipid-plus-carbohydrate energy versus starvation resistance, and increased storage of both under selection."
   },
   {
+   "passage": 2,
    "pmid": "21983144",
    "verdict": "SUPPORTED",
-   "reason": "Wild-derived populations linked starvation resistance with lipid storage and use; carbohydrate and lipid patterns varied across stress phenotypes."
+   "reason": "The abstract associates greater starvation resistance with greater lipid storage and use; it also reports population differences involving carbohydrate and lipid reserves."
   },
   {
+   "passage": 3,
    "pmid": "16033550",
-   "verdict": "PARTIAL",
-   "reason": "Starvation resistance rose across most selection lines, but the abstract does not establish distinct mechanisms or say physiological bases were unidentified."
+   "verdict": "SUPPORTED",
+   "reason": "Starvation resistance increased as a correlated response in most selection-line sets, and the abstract suggests different multiple-stress-resistance mechanisms without identifying each response\u2019s physiological basis."
   }
  ],
+ "raw_support": {
+  "passages": [
+   {
+    "passage": 1,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstract reports 43 populations, R\u00b2 = 0.99 for total lipid-plus-carbohydrate energy versus starvation resistance, and increased storage of both under selection.",
+    "papers": [
+     {
+      "pmid": "9754535",
+      "contributes": true
+     }
+    ]
+   },
+   {
+    "passage": 2,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstract associates greater starvation resistance with greater lipid storage and use; it also reports population differences involving carbohydrate and lipid reserves.",
+    "papers": [
+     {
+      "pmid": "21983144",
+      "contributes": true
+     }
+    ]
+   },
+   {
+    "passage": 3,
+    "group_verdict": "SUPPORTED",
+    "reason": "Starvation resistance increased as a correlated response in most selection-line sets, and the abstract suggests different multiple-stress-resistance mechanisms without identifying each response\u2019s physiological basis.",
+    "papers": [
+     {
+      "pmid": "16033550",
+      "contributes": true
+     }
+    ]
+   }
+  ]
+ },
  "accuracy": {
   "score": 1,
   "reason": "Identifies increased energy storage, but omits energy conservation and starvation tolerance as distinct routes; its cited studies do not cover the reference\u2019s key selected-line findings."

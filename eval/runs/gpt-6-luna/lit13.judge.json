@@ -1,16 +1,38 @@
 {
+ "judge_version": 3,
  "support": [
   {
+   "passage": 1,
    "pmid": "29456884",
    "verdict": "SUPPORTED",
-   "reason": "The abstract reports increased desiccation resistance with more desaturated hydrocarbons, but not greater total hydrocarbon amount."
+   "reason": "Both abstracts support the stated contrast: increased resistance was not associated with more total surface lipids or hydrocarbons, and CH profile or chain length differed."
   },
   {
+   "passage": 1,
    "pmid": "9225453",
    "verdict": "SUPPORTED",
-   "reason": "Selected resistant flies had unchanged total surface lipids and longer-chain cuticular hydrocarbons than controls."
+   "reason": "Both abstracts support the stated contrast: increased resistance was not associated with more total surface lipids or hydrocarbons, and CH profile or chain length differed."
   }
  ],
+ "raw_support": {
+  "passages": [
+   {
+    "passage": 1,
+    "group_verdict": "SUPPORTED",
+    "reason": "Both abstracts support the stated contrast: increased resistance was not associated with more total surface lipids or hydrocarbons, and CH profile or chain length differed.",
+    "papers": [
+     {
+      "pmid": "29456884",
+      "contributes": true
+     },
+     {
+      "pmid": "9225453",
+      "contributes": true
+     }
+    ]
+   }
+  ]
+ },
  "accuracy": {
   "score": 2,
   "reason": "Correctly says resistance was not linked to total hydrocarbon amount, but to a higher proportion of desaturated hydrocarbons."

@@ -1,0 +1,8 @@
+{
+ "judge_version": 2,
+ "support": [],
+ "accuracy": {
+  "score": 2,
+  "reason": "Correctly predicts about 4.82, identifies the positive triglyceride ester C=O band near 1740\u20131760 cm\u207b\u00b9 as the main driver, and notes model limitations."
+ }
+}

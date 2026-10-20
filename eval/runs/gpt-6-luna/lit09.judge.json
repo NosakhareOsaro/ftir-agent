@@ -1,26 +1,99 @@
 {
+ "judge_version": 3,
  "support": [
   {
+   "passage": 1,
    "pmid": "31544155",
-   "verdict": "PARTIAL",
-   "reason": "Accuracy and age-distribution results are stated; larger datasets may improve accuracy and enable wild use, but transfer concerns are not directly tested."
+   "verdict": "SUPPORTED",
+   "reason": "The abstract reports 82.6% species accuracy, age distributions statistically indistinguishable from modeled distributions, and suggests larger datasets to improve accuracy and extend use to wild mosquitoes."
   },
   {
+   "passage": 2,
    "pmid": "41957079",
    "verdict": "SUPPORTED",
-   "reason": "The abstract reports the stated laboratory, semi-field, and transfer-learning accuracies and cautions about laboratory-only generalisability."
+   "reason": "The abstract reports all listed laboratory, semi-field, and transfer-learning accuracy figures for species and age-group classification."
   },
   {
+   "passage": 3,
    "pmid": "37898634",
    "verdict": "SUPPORTED",
-   "reason": "The abstract reports leg-based accuracy of 0.73 for species and 0.77 for age groups under laboratory conditions."
+   "reason": "The abstract reports the non-destructive mosquito-leg method and accuracies of 0.73 for species and 0.77 for age groups under laboratory conditions."
   },
   {
+   "passage": 4,
+   "pmid": "31544155",
+   "verdict": "SUPPORTED",
+   "reason": "The abstracts support promise, reduced performance across semi-field conditions, and the importance of consistent sample preservation and storage duration."
+  },
+  {
+   "passage": 4,
+   "pmid": "41957079",
+   "verdict": "SUPPORTED",
+   "reason": "The abstracts support promise, reduced performance across semi-field conditions, and the importance of consistent sample preservation and storage duration."
+  },
+  {
+   "passage": 4,
    "pmid": "35933384",
-   "verdict": "PARTIAL",
-   "reason": "The abstract directly supports consistent sample handling; it studies preservation and storage, not field-relevant validation or setting transfer."
+   "verdict": "SUPPORTED",
+   "reason": "The abstracts support promise, reduced performance across semi-field conditions, and the importance of consistent sample preservation and storage duration."
   }
  ],
+ "raw_support": {
+  "passages": [
+   {
+    "passage": 1,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstract reports 82.6% species accuracy, age distributions statistically indistinguishable from modeled distributions, and suggests larger datasets to improve accuracy and extend use to wild mosquitoes.",
+    "papers": [
+     {
+      "pmid": "31544155",
+      "contributes": true
+     }
+    ]
+   },
+   {
+    "passage": 2,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstract reports all listed laboratory, semi-field, and transfer-learning accuracy figures for species and age-group classification.",
+    "papers": [
+     {
+      "pmid": "41957079",
+      "contributes": true
+     }
+    ]
+   },
+   {
+    "passage": 3,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstract reports the non-destructive mosquito-leg method and accuracies of 0.73 for species and 0.77 for age groups under laboratory conditions.",
+    "papers": [
+     {
+      "pmid": "37898634",
+      "contributes": true
+     }
+    ]
+   },
+   {
+    "passage": 4,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstracts support promise, reduced performance across semi-field conditions, and the importance of consistent sample preservation and storage duration.",
+    "papers": [
+     {
+      "pmid": "31544155",
+      "contributes": true
+     },
+     {
+      "pmid": "41957079",
+      "contributes": true
+     },
+     {
+      "pmid": "35933384",
+      "contributes": true
+     }
+    ]
+   }
+  ]
+ },
  "accuracy": {
   "score": 2,
   "reason": "Correctly reports the lab-colony age-structure result and 82.6% species accuracy from the reference; extra details do not contradict it."

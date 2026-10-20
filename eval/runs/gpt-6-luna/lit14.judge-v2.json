@@ -1,0 +1,21 @@
+{
+ "judge_version": 2,
+ "support": [
+  {
+   "passage": 1,
+   "pmid": "25943032",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract defines micro-environmental plasticity as phenotypic differences among same-genotype individuals under common macro-environmental conditions."
+  },
+  {
+   "passage": 2,
+   "pmid": "25943032",
+   "verdict": "SUPPORTED",
+   "reason": "The study reports substantial genetic variation across DGRP lines, heritabilities matching or exceeding trait means, and trait-specific plasticity."
+  }
+ ],
+ "accuracy": {
+  "score": 1,
+  "reason": "Correctly defines micro-environmental plasticity and reports substantial DGRP genetic variation and heritabilities, but omits the reference\u2019s candidate-gene finding, Hsp90."
+ }
+}

@@ -1,11 +1,28 @@
 {
+ "judge_version": 3,
  "support": [
   {
+   "passage": 1,
    "pmid": "22570636",
    "verdict": "SUPPORTED",
-   "reason": "The abstract reports the stated correlation, methods, SNP threshold, and authors\u2019 hypothesis about subtle relatedness rather than causal-variant tagging."
+   "reason": "The abstract reports the stated correlation, no improvement from BayesB or SNP selection, decline below 150,000 SNPs, and the authors\u2019 relatedness-based hypothesis."
   }
  ],
+ "raw_support": {
+  "passages": [
+   {
+    "passage": 1,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstract reports the stated correlation, no improvement from BayesB or SNP selection, decline below 150,000 SNPs, and the authors\u2019 relatedness-based hypothesis.",
+    "papers": [
+     {
+      "pmid": "22570636",
+      "contributes": true
+     }
+    ]
+   }
+  ]
+ },
  "accuracy": {
   "score": 2,
   "reason": "Gives the reference estimate and correctly states prediction was modest and BayesB was no better; added details are consistent."

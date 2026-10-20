@@ -1,11 +1,28 @@
 {
+ "judge_version": 3,
  "support": [
   {
+   "passage": 1,
    "pmid": "25583649",
    "verdict": "SUPPORTED",
-   "reason": "The abstract lists all six indices, both diets, genetic variation, and correlations with the three named stress phenotypes."
+   "reason": "The abstract specifies all six indices, both diets, genetic variation, and correlations with the three listed stress phenotypes; it does not assign individual correlations."
   }
  ],
+ "raw_support": {
+  "passages": [
+   {
+    "passage": 1,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstract specifies all six indices, both diets, genetic variation, and correlations with the three listed stress phenotypes; it does not assign individual correlations.",
+    "papers": [
+     {
+      "pmid": "25583649",
+      "contributes": true
+     }
+    ]
+   }
+  ]
+ },
  "accuracy": {
   "score": 2,
   "reason": "Correctly lists all six indices, both diets, significant genetic variation, and correlations with starvation resistance, oxidative stress, and ER stress."

@@ -1,0 +1,21 @@
+{
+ "judge_version": 2,
+ "support": [
+  {
+   "passage": 1,
+   "pmid": "29456884",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract links increased resistance to a higher proportion of desaturated hydrocarbons, not a greater total amount."
+  },
+  {
+   "passage": 1,
+   "pmid": "9225453",
+   "verdict": "SUPPORTED",
+   "reason": "Selected resistant flies had no difference in total surface lipids and had longer-chain cuticular hydrocarbons."
+  }
+ ],
+ "accuracy": {
+  "score": 2,
+  "reason": "Correctly says resistance was not linked to total hydrocarbon amount, but to a higher proportion of desaturated hydrocarbons."
+ }
+}

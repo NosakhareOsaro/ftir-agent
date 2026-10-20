@@ -1,0 +1,21 @@
+{
+ "judge_version": 2,
+ "support": [
+  {
+   "passage": 1,
+   "pmid": "24714809",
+   "verdict": "SUPPORTED",
+   "reason": "Reports about 50% of DGRP lines carry Wolbachia and infection effects on quantitative traits are rarely significant."
+  },
+  {
+   "passage": 1,
+   "pmid": "27035832",
+   "verdict": "SUPPORTED",
+   "reason": "Reports a weak effect of Wolbachia infection on recombination rate, matching the example in the passage."
+  }
+ ],
+ "accuracy": {
+  "score": 2,
+  "reason": "Correctly states that about half of DGRP lines are infected and infection effects on quantitative traits are rarely significant."
+ }
+}

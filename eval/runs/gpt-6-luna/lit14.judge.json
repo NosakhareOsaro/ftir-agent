@@ -1,16 +1,45 @@
 {
+ "judge_version": 3,
  "support": [
   {
+   "passage": 1,
    "pmid": "25943032",
-   "verdict": "SUPPORTED",
-   "reason": "Defines within-genotype variation under common macro-environments as micro-environmental plasticity."
+   "verdict": "PARTIAL",
+   "reason": "The abstract defines micro-environmental plasticity as phenotypic differences among same-genotype individuals reared under common macro-environmental conditions, but does not attribute those differences specifically to small-scale environmental variation or stochastic effects."
   },
   {
+   "passage": 2,
    "pmid": "25943032",
    "verdict": "SUPPORTED",
-   "reason": "The abstract explicitly states that micro-environmental plasticity is trait-specific."
+   "reason": "The abstract reports substantial genetic variation across DGRP lines for three traits, heritabilities as large as or greater than trait-mean heritabilities, and trait-specific plasticity."
   }
  ],
+ "raw_support": {
+  "passages": [
+   {
+    "passage": 1,
+    "group_verdict": "PARTIAL",
+    "reason": "The abstract defines micro-environmental plasticity as phenotypic differences among same-genotype individuals reared under common macro-environmental conditions, but does not attribute those differences specifically to small-scale environmental variation or stochastic effects.",
+    "papers": [
+     {
+      "pmid": "25943032",
+      "contributes": true
+     }
+    ]
+   },
+   {
+    "passage": 2,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstract reports substantial genetic variation across DGRP lines for three traits, heritabilities as large as or greater than trait-mean heritabilities, and trait-specific plasticity.",
+    "papers": [
+     {
+      "pmid": "25943032",
+      "contributes": true
+     }
+    ]
+   }
+  ]
+ },
  "accuracy": {
   "score": 1,
   "reason": "Correctly defines micro-environmental plasticity and reports substantial DGRP genetic variation and heritabilities, but omits the reference\u2019s candidate-gene finding, Hsp90."

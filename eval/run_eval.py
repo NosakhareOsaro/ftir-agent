@@ -41,7 +41,7 @@ sys.path.insert(0, str(ROOT))
 
 from agent import ncbi  # noqa: E402
 from agent.llm import ChatClient  # noqa: E402
-from agent.loop import run_agent  # noqa: E402
+from agent.loop import extract_pmids, run_agent  # noqa: E402
 from agent.tools import ToolBox  # noqa: E402
 
 EVAL_DIR = ROOT / "eval"
@@ -63,40 +63,87 @@ def keyword_score(answer, groups):
     return hits / len(groups)
 
 
-def sentences_citing(answer, pmid):
+def citation_spans(answer):
     """
-    The claim text in the answer that cites this PMID.
+    Split the answer into (passage, [cited PMIDs]) pairs.
 
-    Usually the sentence containing the citation. When the citation stands on
-    its own after the full stop ("…claim. [PMID:1] [PMID:2]"), it covers the
-    paragraph before it, so that text is used instead. Reference-list lines
-    are only used if nothing in the body cites the paper.
+    A citation covers its own sentence plus any uncited sentences just before
+    it in the same paragraph ("Survival rose 50%. The authors suggest X
+    [PMID:1]." cites PMID 1 for both). A bare citation after the full stop
+    with nothing uncited before it covers the previous sentence. Reference-list
+    lines are used only for papers the body never cites.
     """
-    token = re.compile(rf"PMID:?\s*{pmid}\b", re.IGNORECASE)
     parts = re.split(r"^#*\s*References\b.*$", answer, maxsplit=1, flags=re.M | re.I)
     body, refs = parts[0], (parts[1] if len(parts) > 1 else "")
-    found = []
+    spans = []
     for para in body.split("\n"):
         sents = [s for s in re.split(r"(?<=[.!?])\s+", para.strip()) if s]
+        pending = []
         for i, s in enumerate(sents):
-            if not token.search(s):
+            pmids = extract_pmids(s)
+            if not pmids:
+                pending.append(s)
                 continue
             citation_only = not re.sub(r"[\[\]\s,;]|PMID:?\s*\d+", "", s, flags=re.I)
-            found.append(" ".join(sents[:i + 1]) if citation_only else s)
-    if not found:
-        found = [l.strip() for l in refs.split("\n") if token.search(l)]
-    return found or [answer[:500]]
+            if citation_only and not pending and i > 0:
+                pending = [sents[i - 1]]
+            spans.append((" ".join(pending + [s]), pmids))
+            pending = []
+    in_body = {p for _, pmids in spans for p in pmids}
+    for line in refs.split("\n"):
+        pmids = [p for p in extract_pmids(line) if p not in in_body]
+        if pmids:
+            spans.append((line.strip(), pmids))
+    return spans
 
+
+def sentences_citing(answer, pmid):
+    """Every passage in the answer that cites this PMID."""
+    return [text for text, pmids in citation_spans(answer) if pmid in pmids] or [answer[:500]]
+
+
+# v1: one paper per item, only the sentence holding the citation.
+# v2: whole cited passage, co-cited abstracts together, grouped-citation rule in
+#     the prompt. The judge ignored the rule, so:
+# v3: the judge answers two simpler questions per passage (does the group support
+#     it all? does each paper support some of it?) and code applies the rule.
+JUDGE_VERSION = 3
 
 JUDGE_SUPPORT = """You check citations in a scientific answer.
-For each item, decide whether the ABSTRACT supports the CLAIM that cites it.
-SUPPORTED = the abstract states or directly implies the claim.
-PARTIAL = the abstract supports part of the claim, or the claim overstates it.
-UNSUPPORTED = the abstract does not support the claim.
-Reference-list lines that only give author/year/title count as SUPPORTED if the title matches.
-Reply with JSON only: {{"verdicts": [{{"pmid": "...", "verdict": "...", "reason": "<15 words"}}]}}
+Each PASSAGE below is followed by the abstracts of every paper it cites.
+For each passage, answer two separate questions.
+
+1. group_verdict: taking ALL of the passage's cited abstracts together, is the whole passage
+   supported?
+   SUPPORTED = every claim in the passage is stated or directly implied by at least one abstract.
+   PARTIAL = some claims are supported, but at least one is not, or is overstated.
+   UNSUPPORTED = the abstracts do not support the passage.
+2. For each cited paper on its own: does its abstract support at least one claim in the
+   passage? (true/false). A paper does not need to support the whole passage.
+
+Judge only against the abstracts shown, not outside knowledge.
+A reference-list line that only gives author/year/title is SUPPORTED if the title matches.
+Reply with JSON only:
+{{"passages": [{{"passage": <n>, "group_verdict": "...", "reason": "<25 words",
+  "papers": [{{"pmid": "...", "contributes": true}}]}}]}}
 
 {items}"""
+
+
+def apply_group_rule(judged):
+    """
+    Turn per-passage answers into one verdict per paper per passage.
+
+    Grouped-citation rule: a paper that supports part of the passage takes the
+    group's verdict; a paper that supports none of it is UNSUPPORTED.
+    """
+    out = []
+    for p in judged.get("passages", []):
+        for paper in p.get("papers", []):
+            verdict = p["group_verdict"] if paper.get("contributes") else "UNSUPPORTED"
+            out.append({"passage": p["passage"], "pmid": str(paper["pmid"]),
+                        "verdict": verdict, "reason": p.get("reason", "")})
+    return out
 
 JUDGE_ACCURACY = """You grade an AI research assistant's answer against a reference answer.
 Score 2 if it is correct and covers the key points of the reference.
@@ -121,19 +168,23 @@ def judge_json(judge, prompt):
     return json.loads(match.group(0))
 
 
-def judge_run(judge, q, run):
-    out = {}
-    cited = [p for p in run["cited_pmids"] if p in run["abstracts"]]
-    if cited:
+def judge_run(judge, q, run, accuracy=None):
+    """Judge citation support and answer accuracy. Pass `accuracy` to reuse a cached score."""
+    out = {"judge_version": JUDGE_VERSION, "support": []}
+    abstracts = run["abstracts"]
+    spans = [(text, [p for p in pmids if p in abstracts])
+             for text, pmids in citation_spans(run["answer"])]
+    spans = [(text, pmids) for text, pmids in spans if pmids]
+    if spans:
         items = "\n\n".join(
-            f"PMID {p}\nCLAIM: {' / '.join(sentences_citing(run['answer'], p))}\n"
-            f"ABSTRACT: {run['abstracts'][p]['title']}. {run['abstracts'][p]['abstract'][:2500]}"
-            for p in cited
+            f"PASSAGE {n}: {text}\n" + "\n".join(
+                f"  PMID {p}: {abstracts[p]['title']}. {abstracts[p]['abstract'][:2500]}"
+                for p in pmids)
+            for n, (text, pmids) in enumerate(spans, 1)
         )
-        out["support"] = judge_json(judge, JUDGE_SUPPORT.format(items=items))["verdicts"]
-    else:
-        out["support"] = []
-    out["accuracy"] = judge_json(judge, JUDGE_ACCURACY.format(
+        out["raw_support"] = judge_json(judge, JUDGE_SUPPORT.format(items=items))
+        out["support"] = apply_group_rule(out["raw_support"])
+    out["accuracy"] = accuracy or judge_json(judge, JUDGE_ACCURACY.format(
         question=q["question"], reference=q["reference_answer"], answer=run["answer"]))
     return out
 
@@ -205,10 +256,18 @@ def main():
             judge_path.unlink(missing_ok=True)
         if run is None or "skipped" in run:
             continue
-        if judge and not judge_path.exists():
+        old = load_json(judge_path)
+        if judge and (old is None or old.get("judge_version", 1) != JUDGE_VERSION):
             print(f"[{i}/{len(questions)}] {q['id']}: judging…", flush=True)
+            accuracy = None
+            if old:
+                # Keep the older judge's verdicts for comparison and reuse its
+                # accuracy score, so only the citation check changes.
+                old_path = run_dir / f"{q['id']}.judge-v{old.get('judge_version', 1)}.json"
+                old_path.write_text(json.dumps(old, indent=1))
+                accuracy = old.get("accuracy")
             try:
-                judge_path.write_text(json.dumps(judge_run(judge, q, run), indent=1))
+                judge_path.write_text(json.dumps(judge_run(judge, q, run, accuracy), indent=1))
             except Exception as exc:
                 print(f"   judge failed: {exc}")
                 if str(exc)[:3] in ("401", "402", "403"):

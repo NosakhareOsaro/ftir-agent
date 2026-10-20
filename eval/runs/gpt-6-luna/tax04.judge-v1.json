@@ -1,0 +1,7 @@
+{
+ "support": [],
+ "accuracy": {
+  "score": 2,
+  "reason": "Flags the ambiguity and correctly gives taxid 7227 for the usual model organism, Drosophila melanogaster."
+ }
+}

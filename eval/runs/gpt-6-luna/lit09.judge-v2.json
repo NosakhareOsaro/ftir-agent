@@ -1,0 +1,45 @@
+{
+ "judge_version": 2,
+ "support": [
+  {
+   "passage": 1,
+   "pmid": "31544155",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract reports 82.6% species accuracy, age distributions indistinguishable from modeled truth, and larger datasets as a route to improvement and wild-mosquito use."
+  },
+  {
+   "passage": 2,
+   "pmid": "41957079",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract gives the stated laboratory, semi-field, and transfer-learning accuracies for species and age-group classification."
+  },
+  {
+   "passage": 3,
+   "pmid": "37898634",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract reports non-destructive leg scanning with 0.73 species accuracy and 0.77 accuracy for distinguishing 3- and 10-day-old mosquitoes."
+  },
+  {
+   "passage": 4,
+   "pmid": "31544155",
+   "verdict": "PARTIAL",
+   "reason": "It calls for larger datasets and expansion to wild mosquitoes, but does not show cross-setting transfer failure or address sample handling."
+  },
+  {
+   "passage": 4,
+   "pmid": "41957079",
+   "verdict": "SUPPORTED",
+   "reason": "Accuracy declined from laboratory to semi-field conditions, and transfer learning improved performance, supporting the need for field-relevant validation."
+  },
+  {
+   "passage": 4,
+   "pmid": "35933384",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract reports reduced accuracy across preservation methods and storage durations, supporting the importance of consistent sample handling."
+  }
+ ],
+ "accuracy": {
+  "score": 2,
+  "reason": "Correctly reports the lab-colony age-structure result and 82.6% species accuracy from the reference; extra details do not contradict it."
+ }
+}

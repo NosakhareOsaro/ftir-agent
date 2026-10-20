@@ -1,0 +1,15 @@
+{
+ "judge_version": 2,
+ "support": [
+  {
+   "passage": 1,
+   "pmid": "22570636",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract reports the correlation, BayesB and SNP-selection results, SNP-count threshold, and the authors\u2019 hypothesis about subtle relatedness rather than causal-variant tagging."
+  }
+ ],
+ "accuracy": {
+  "score": 2,
+  "reason": "Gives the reference estimate and correctly states prediction was modest and BayesB was no better; added details are consistent."
+ }
+}

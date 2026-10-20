@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from eval.run_eval import keyword_score, sentences_citing
+from eval.run_eval import apply_group_rule, citation_spans, keyword_score, sentences_citing
 
 ROOT = Path(__file__).parent.parent
 
@@ -14,16 +14,46 @@ def test_keyword_score():
 
 
 def test_sentences_citing():
-    ans = "First claim [PMID:1]. Second claim [PMID:2].\nReferences\n- Smith 2020 [PMID:1]"
-    assert sentences_citing(ans, "2") == ["Second claim [PMID:2]."]
-    assert sentences_citing(ans, "1") == ["First claim [PMID:1]."]
+    ans = "First claim [PMID:11111111]. Second claim [PMID:20202020].\nReferences\n- Smith 2020 [PMID:11111111]"
+    assert sentences_citing(ans, "20202020") == ["Second claim [PMID:20202020]."]
+    assert sentences_citing(ans, "11111111") == ["First claim [PMID:11111111]."]
 
 
 def test_citation_after_full_stop_covers_paragraph():
-    ans = ("About half are infected. Effects are rarely significant. [PMID:24714809] [PMID:2]\n\n"
+    ans = ("About half are infected. Effects are rarely significant. [PMID:24714809] [PMID:27035832]\n\n"
            "### References\n- Huang W, 2014. Natural variation. [PMID:24714809]")
     assert sentences_citing(ans, "24714809") == [
-        "About half are infected. Effects are rarely significant. [PMID:24714809] [PMID:2]"]
+        "About half are infected. Effects are rarely significant. [PMID:24714809] [PMID:27035832]"]
+
+
+def test_citation_covers_preceding_uncited_sentences():
+    # Audit item #7: the 50% claim had no citation of its own and went unchecked in v1.
+    ans = ("Ablated flies survive starvation about 50% longer. The authors suggest slower "
+           "mobilisation [PMID:15374818].\n\nReferences\n- Isabel G, 2005.")
+    assert sentences_citing(ans, "15374818") == [
+        "Ablated flies survive starvation about 50% longer. The authors suggest slower "
+        "mobilisation [PMID:15374818]."]
+
+
+def test_citation_spans_group_co_cited_papers():
+    ans = "Uncited intro.\nA is true [PMID:11111111] [PMID:22222222]. B is true [PMID:33333333]."
+    assert citation_spans(ans) == [
+        ("A is true [PMID:11111111] [PMID:22222222].", ["11111111", "22222222"]),
+        ("B is true [PMID:33333333].", ["33333333"])]
+
+
+def test_group_rule_applied_in_code():
+    judged = {"passages": [
+        {"passage": 1, "group_verdict": "SUPPORTED", "reason": "",
+         "papers": [{"pmid": "11111111", "contributes": True},
+                    {"pmid": "22222222", "contributes": True}]},
+        {"passage": 2, "group_verdict": "PARTIAL", "reason": "",
+         "papers": [{"pmid": "33333333", "contributes": True},
+                    {"pmid": 44444444, "contributes": False}]},
+    ]}
+    got = {(v["passage"], v["pmid"]): v["verdict"] for v in apply_group_rule(judged)}
+    assert got == {(1, "11111111"): "SUPPORTED", (1, "22222222"): "SUPPORTED",
+                   (2, "33333333"): "PARTIAL", (2, "44444444"): "UNSUPPORTED"}
 
 
 def test_reference_list_used_only_as_fallback():

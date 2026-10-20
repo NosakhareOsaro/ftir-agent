@@ -1,0 +1,13 @@
+{
+ "support": [
+  {
+   "pmid": "14738315",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract explicitly lists both D. melanogaster and D. simulans among species of the melanogaster subgroup."
+  }
+ ],
+ "accuracy": {
+  "score": 2,
+  "reason": "Correctly identifies both as members of the melanogaster subgroup and gives the accurate NCBI taxids 7240 and 7227."
+ }
+}

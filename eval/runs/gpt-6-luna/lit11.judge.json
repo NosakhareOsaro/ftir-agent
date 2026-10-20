@@ -1,11 +1,28 @@
 {
+ "judge_version": 3,
  "support": [
   {
+   "passage": 1,
    "pmid": "19815877",
    "verdict": "SUPPORTED",
-   "reason": "The abstract reports approximately 80% field species accuracy, almost 100% laboratory accuracy, and the stated age accuracies."
+   "reason": "The abstract reports approximately 80% species accuracy for field-collected mosquitoes, almost 100% for laboratory-reared insects, and the stated age-classification accuracies."
   }
  ],
+ "raw_support": {
+  "passages": [
+   {
+    "passage": 1,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstract reports approximately 80% species accuracy for field-collected mosquitoes, almost 100% for laboratory-reared insects, and the stated age-classification accuracies.",
+    "papers": [
+     {
+      "pmid": "19815877",
+      "contributes": true
+     }
+    ]
+   }
+  ]
+ },
  "accuracy": {
   "score": 2,
   "reason": "Accurately reports the species and age identification rates, including the distinction between field-collected and lab-reared mosquitoes."

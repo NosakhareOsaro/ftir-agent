@@ -1,11 +1,28 @@
 {
+ "judge_version": 3,
  "support": [
   {
+   "passage": 1,
    "pmid": "15374818",
    "verdict": "SUPPORTED",
-   "reason": "The abstract reports progressive hypoactivity and suggests slower energy-resource mobilization explains extended survival."
+   "reason": "The abstract reports approximately 50% longer starvation survival, suggests slower energy-resource mobilization, and states that flies become progressively hypoactive."
   }
  ],
+ "raw_support": {
+  "passages": [
+   {
+    "passage": 1,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstract reports approximately 50% longer starvation survival, suggests slower energy-resource mobilization, and states that flies become progressively hypoactive.",
+    "papers": [
+     {
+      "pmid": "15374818",
+      "contributes": true
+     }
+    ]
+   }
+  ]
+ },
  "accuracy": {
   "score": 1,
   "reason": "Correctly reports increased starvation survival, but omits the key loss of starvation-induced hyperactivity; the precise 50% claim is not in the reference."

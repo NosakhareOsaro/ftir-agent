@@ -1,0 +1,21 @@
+{
+ "judge_version": 2,
+ "support": [
+  {
+   "passage": 1,
+   "pmid": "8641052",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract reports that lipid and starvation resistance do not explain the long-lived strains, while studying selected lines; it does not establish a general reserve mechanism."
+  },
+  {
+   "passage": 2,
+   "pmid": "8641052",
+   "verdict": "SUPPORTED",
+   "reason": "The cited title matches the reference-list entry, and the abstract describes the study and its findings."
+  }
+ ],
+ "accuracy": {
+  "score": 0,
+  "reason": "Does not answer the general finding: both lipid and carbohydrate stores correlate with resistance, and their combined energy content explains it best; it overgeneralizes from one study."
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "judge_version": 2,
+ "support": [
+  {
+   "passage": 1,
+   "pmid": "9754535",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract reports 43 populations, an R\u00b2 of 0.99 for total lipid and carbohydrate energy versus starvation resistance, and genetically increased storage of both."
+  },
+  {
+   "passage": 2,
+   "pmid": "21983144",
+   "verdict": "SUPPORTED",
+   "reason": "Wild-derived populations showed greater starvation resistance associated with storing and using more lipid; the study also examined variation in carbohydrate and lipid reserves."
+  },
+  {
+   "passage": 3,
+   "pmid": "16033550",
+   "verdict": "SUPPORTED",
+   "reason": "Starvation resistance increased as a correlated response to several selection regimes, and the authors suggest different mechanisms but do not identify the physiological basis of each response."
+  }
+ ],
+ "accuracy": {
+  "score": 1,
+  "reason": "Identifies increased energy storage, but omits energy conservation and starvation tolerance as distinct routes; its cited studies do not cover the reference\u2019s key selected-line findings."
+ }
+}

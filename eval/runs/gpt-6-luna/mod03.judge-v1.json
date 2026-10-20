@@ -1,0 +1,7 @@
+{
+ "support": [],
+ "accuracy": {
+  "score": 2,
+  "reason": "Correctly identifies most_resistant as more resistant and gives predictions and difference matching the reference."
+ }
+}

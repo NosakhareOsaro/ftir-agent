@@ -1,11 +1,28 @@
 {
+ "judge_version": 3,
  "support": [
   {
+   "passage": 1,
    "pmid": "17714282",
    "verdict": "SUPPORTED",
-   "reason": "The abstract directly describes survival mode, lipid and metabolic changes, reduced reproduction, correlated traits, and unresolved ecological significance."
+   "reason": "The abstract describes a survival-mode shift with increased lipids, metabolic changes, reduced reproduction, associated stress resistance and longevity, and poorly understood ecological significance."
   }
  ],
+ "raw_support": {
+  "passages": [
+   {
+    "passage": 1,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstract describes a survival-mode shift with increased lipids, metabolic changes, reduced reproduction, associated stress resistance and longevity, and poorly understood ecological significance.",
+    "papers": [
+     {
+      "pmid": "17714282",
+      "contributes": true
+     }
+    ]
+   }
+  ]
+ },
  "accuracy": {
   "score": 2,
   "reason": "Accurately captures the survival-mode trade-offs, associated stress resistance and life-history traits, and the poorly understood ecological significance."

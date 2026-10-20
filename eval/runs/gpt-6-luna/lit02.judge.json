@@ -1,16 +1,38 @@
 {
+ "judge_version": 3,
  "support": [
   {
+   "passage": 1,
    "pmid": "24714809",
    "verdict": "SUPPORTED",
-   "reason": "Reports approximately 50% infection and says Wolbachia effects on quantitative traits are rarely significant."
+   "reason": "One abstract reports about 50% infection and rarely significant quantitative-trait effects; the other reports a weak Wolbachia effect on recombination rate."
   },
   {
+   "passage": 1,
    "pmid": "27035832",
    "verdict": "SUPPORTED",
-   "reason": "Explicitly reports a weak effect of Wolbachia infection on recombination rate."
+   "reason": "One abstract reports about 50% infection and rarely significant quantitative-trait effects; the other reports a weak Wolbachia effect on recombination rate."
   }
  ],
+ "raw_support": {
+  "passages": [
+   {
+    "passage": 1,
+    "group_verdict": "SUPPORTED",
+    "reason": "One abstract reports about 50% infection and rarely significant quantitative-trait effects; the other reports a weak Wolbachia effect on recombination rate.",
+    "papers": [
+     {
+      "pmid": "24714809",
+      "contributes": true
+     },
+     {
+      "pmid": "27035832",
+      "contributes": true
+     }
+    ]
+   }
+  ]
+ },
  "accuracy": {
   "score": 2,
   "reason": "Correctly states that about half of DGRP lines are infected and infection effects on quantitative traits are rarely significant."

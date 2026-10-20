@@ -1,11 +1,45 @@
 {
+ "judge_version": 3,
  "support": [
   {
+   "passage": 1,
    "pmid": "8641052",
    "verdict": "SUPPORTED",
-   "reason": "The study found lipid-linked starvation resistance was not operative in its long-lived strains; it does not establish a general reserve mechanism."
+   "reason": "The abstract says lipid-linked starvation resistance was not operative in the long-lived strains, and the passage appropriately limits its conclusion to that study."
+  },
+  {
+   "passage": 2,
+   "pmid": "8641052",
+   "verdict": "SUPPORTED",
+   "reason": "The cited title matches the reference-list entry."
   }
  ],
+ "raw_support": {
+  "passages": [
+   {
+    "passage": 1,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstract says lipid-linked starvation resistance was not operative in the long-lived strains, and the passage appropriately limits its conclusion to that study.",
+    "papers": [
+     {
+      "pmid": "8641052",
+      "contributes": true
+     }
+    ]
+   },
+   {
+    "passage": 2,
+    "group_verdict": "SUPPORTED",
+    "reason": "The cited title matches the reference-list entry.",
+    "papers": [
+     {
+      "pmid": "8641052",
+      "contributes": true
+     }
+    ]
+   }
+  ]
+ },
  "accuracy": {
   "score": 0,
   "reason": "Does not answer the general finding: both lipid and carbohydrate stores correlate with resistance, and their combined energy content explains it best; it overgeneralizes from one study."

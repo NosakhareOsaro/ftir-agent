@@ -1,0 +1,13 @@
+{
+ "support": [
+  {
+   "pmid": "17488184",
+   "verdict": "SUPPORTED",
+   "reason": "Identifies Brummer as the mammalian ATGL homolog and links its loss to obesity and impaired fat mobilization."
+  }
+ ],
+ "accuracy": {
+  "score": 2,
+  "reason": "Correctly identifies bmm as the ATGL homolog and states that loss causes excess fat accumulation; added details do not conflict with the reference."
+ }
+}

@@ -96,10 +96,10 @@ and report the agreement below.
 Agent and judge: `gpt-6-luna` (OpenAI), one run, 25 questions. A full run costs about
 $0.10. Full per-question table: [`eval/results.md`](eval/results.md).
 
-| Slice | n | Citations exist | Citations grounded | Citations supported (judge) | Key paper retrieved | Required facts | Fully correct (judge) |
+| Slice | n | Citations exist | Citations grounded | Citations supported (judge v3) | Key paper retrieved | Required facts | Fully correct (judge) |
 |---|---|---|---|---|---|---|---|
-| **all** | 25 | **100%** (25/25) | **100%** (25/25) | **84%** (21/25) | 75% (12/16) | 86% | **76%** (19/25) |
-| literature | 16 | 100% | 100% | 83% | 75% | 81% | 62% (10/16) |
+| **all** | 25 | **100%** (25/25) | **100%** (25/25) | **88%** (22/25) | 75% (12/16) | 86% | **76%** (19/25) |
+| literature | 16 | 100% | 100% | 88% | 75% | 81% | 62% (10/16) |
 | taxonomy | 4 | 100% | 100% | 100% | n/a | 92% | 100% |
 | model | 3 | n/a | n/a | n/a | n/a | 100% | 100% |
 | negative | 2 | n/a | n/a | n/a | n/a | 100% | 100% |
@@ -108,17 +108,18 @@ $0.10. Full per-question table: [`eval/results.md`](eval/results.md).
 - **No fabricated citations.** Every cited PMID is real, and every one was fetched and
   read in that run. Neither trap question (a non-existent study, an out-of-scope request)
   produced invented content.
-- **The remaining citation issues are overstatement, not invention.** All 4 non-supported
-  citations were rated PARTIAL: the claim went somewhat beyond the abstract.
+- **The remaining citation issues are overstatement, not invention.** All 3 non-supported
+  citations were rated PARTIAL: the passage went somewhat beyond the abstracts. Depending on
+  the judge version and the reviewer, citation support is between 84% and 92% (see below).
 - **Failures are retrieval failures.** In the 3 questions scored 0, the agent wrote long,
   over-specific PubMed queries ("…205 lines Freeze 2…"). PubMed ANDs every term, so these
   returned nothing or the wrong papers. The agent then correctly said it could not find
   the evidence rather than guessing, but the answer was still unhelpful. Short queries
   find all of these papers.
 
-**Judge reliability.** A model from a different family (Claude, Anthropic) independently
-reviewed all 25 citation verdicts ([`eval/judge_audit.md`](eval/judge_audit.md)). It agreed
-with the judge on **21/25 (84%)**. The judge was too strict on 3 grouped citations, where
+**Judge reliability.** A second LLM, from a different model family than the judge, independently
+reviewed all 25 citation verdicts of the first judge, v1
+([`eval/judge_audit.md`](eval/judge_audit.md)). It agreed with the judge on **21/25 (84%)**. The judge was too strict on 3 grouped citations, where
 co-cited papers each covered part of the sentence, and too lenient on 1, where an abstract
 reported obesity only for a double mutant. With the second reviewer's verdicts, citation
 support is 23/25 (92%). The judge also changed one verdict between runs.
@@ -131,6 +132,34 @@ citation down because one paper doesn't cover the whole sentence. That is a prom
 problem, not random noise. The spot-check also found two small overstatements the judge
 didn't flag: the agent said a 2019 paper's authors called larger datasets "needed" where the
 abstract says improvements are "possible".
+
+**Fixing the judge.** Both reviews pointed to two causes: the judge didn't apply the
+grouped-citation rule, and it saw only the sentence holding a citation, so earlier uncited
+sentences that the citation covers went unchecked. I made two revisions and scored each
+against the fixed reference labels in
+[`eval/reference_verdicts.json`](eval/reference_verdicts.json)
+(`eval/compare_judges.py`). The agent's answers and accuracy scores were held constant.
+
+| Judge | Change | Agrees with human (n=10) | Agrees with second reviewer (n=25) | Supported |
+|---|---|---|---|---|
+| v1 | One paper at a time, citing sentence only | 6/10 | 21/25 | 21/25 |
+| v2 | Whole cited passage, co-cited abstracts together, rule stated in the prompt | 7/10 | 21/25 | 23/25 |
+| **v3** (current) | The judge answers two simpler questions; code applies the rule | 7/10 | 20/25 | 22/25 |
+
+- **Stating a rule in the prompt was not enough.** v2's own reasons show it still marked a
+  paper down for details that the co-cited paper supplied.
+- **Splitting the decision did fix the grouped-citation error.** v3 credits each paper with
+  its part, and two of the three grouped cases moved to SUPPORTED. The judge answers whether
+  the group supports the passage and whether each paper contributes; code applies the rule.
+- **The overall agreement numbers did not move.** v3 now sees whole passages, so it is
+  stricter about paraphrase. It flags "stochastic effects", the item the spot-check called most
+  borderline, and an inference ("not produced by crossing laboratory strains") that no
+  abstract states. One lenient call persists in every version: obesity reported only for a
+  double mutant. With 10 hand labels, 6 versus 7 is not a meaningful difference.
+- **I kept v3 because of how it is built, not because of its score.** It checks every claim a
+  citation covers, and it enforces the citation rule in code rather than trusting the model.
+  The remaining disagreements are borderline paraphrase calls where reviewers can reasonably
+  differ.
 
 **Two harness bugs found while validating the eval.** (1) Citations placed after the full
 stop ("…claim. [PMID:x]") were split away from their claim, so the judge saw an empty
@@ -167,11 +196,9 @@ literature and taxonomy tools still work, and the model tests run on a synthetic
 - **Query formulation is the weakest link.** Next step: have the agent start with 3–5 key
   terms and broaden on zero hits, then measure it on a *new* question set. Tuning against
   these 25 questions would overfit them.
-- **The judge's citation check needs better inputs.** It doesn't apply the grouped-citation
-  rule, and it only sees the sentence holding the citation. When one citation at the end of a
-  paragraph covers earlier uncited sentences, those claims go unchecked. Next step: state the
-  rule in the judge prompt, give it every co-cited abstract together, and pass the whole
-  cited paragraph. Then re-measure agreement against the hand-checked verdicts.
+- **Judge agreement has plateaued at about 80–85%.** The remaining disagreements are
+  borderline paraphrase calls. Next step: more hand-labelled verdicts (10 can't separate
+  judges), and a written policy on paraphrase, decided before re-scoring.
 - **The agent and the judge are the same model.** It may go easy on its own style of answer.
   Next step: judge with a different model family.
 - **The judge runs at the model's default temperature** (gpt-6-luna only accepts its default

@@ -1,0 +1,8 @@
+{
+ "judge_version": 2,
+ "support": [],
+ "accuracy": {
+  "score": 2,
+  "reason": "Gives the three matching predictions and appropriately cautions that within-line single-fly variation is substantial, training used line means, and cross-lab transfer failed."
+ }
+}

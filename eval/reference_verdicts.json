@@ -1,0 +1,42 @@
+{
+ "_note": "Reference labels for the citation judge, keyed question/PMID. second_reviewer: a second LLM from a different model family than the judge, on all 25 v1 verdicts. human: author's hand spot-check of 10 verdicts.",
+ "second_reviewer": {
+  "lit01/22318601": "SUPPORTED",
+  "lit01/28834395": "SUPPORTED",
+  "lit02/24714809": "SUPPORTED",
+  "lit02/27035832": "SUPPORTED",
+  "lit04/8641052": "SUPPORTED",
+  "lit05/17488184": "PARTIAL",
+  "lit06/15374818": "SUPPORTED",
+  "lit07/9754535": "SUPPORTED",
+  "lit07/21983144": "SUPPORTED",
+  "lit07/16033550": "PARTIAL",
+  "lit08/22570636": "SUPPORTED",
+  "lit09/31544155": "SUPPORTED",
+  "lit09/41957079": "SUPPORTED",
+  "lit09/37898634": "SUPPORTED",
+  "lit09/35933384": "SUPPORTED",
+  "lit10/31544155": "SUPPORTED",
+  "lit10/38500231": "SUPPORTED",
+  "lit11/19815877": "SUPPORTED",
+  "lit12/25583649": "SUPPORTED",
+  "lit13/29456884": "SUPPORTED",
+  "lit13/9225453": "SUPPORTED",
+  "lit14/25943032": "SUPPORTED",
+  "lit15/22949659": "SUPPORTED",
+  "lit16/17714282": "SUPPORTED",
+  "tax02/14738315": "SUPPORTED"
+ },
+ "human": {
+  "lit01/22318601": "SUPPORTED",
+  "lit02/24714809": "SUPPORTED",
+  "lit05/17488184": "PARTIAL",
+  "lit06/15374818": "SUPPORTED",
+  "lit08/22570636": "SUPPORTED",
+  "lit09/31544155": "SUPPORTED",
+  "lit09/41957079": "SUPPORTED",
+  "lit09/35933384": "SUPPORTED",
+  "lit13/29456884": "SUPPORTED",
+  "lit14/25943032": "SUPPORTED"
+ }
+}

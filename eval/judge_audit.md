@@ -1,6 +1,6 @@
 # Judge audit: citation support
 
-Judge: `gpt-6-luna` (OpenAI). **Second reviewer:** Claude (Anthropic), a different model family, reviewed every verdict. This is a cross-model check, **not** a human audit.
+Judge: `gpt-6-luna` (OpenAI), **judge v1** (the archived `*.judge-v1.json` verdicts; see README for v2 and v3). **Second reviewer:** a second LLM, from a different model family than the judge, reviewed every verdict. This is a cross-model check, **not** a human audit.
 
 Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part of the sentence, and together they must support all of it.
 
@@ -16,7 +16,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Judge:** PARTIAL: Supports a community resource of fully sequenced inbred lines from a natural population, but not 205 lines or Raleigh location.
 
-**Second reviewer (Claude):** disagree. SUPPORTED. Grouped citation: this paper supports 'sequenced inbred lines from a natural population'; the co-cited review supplies 205 lines and Raleigh, and the answer says so explicitly.
+**Second reviewer (second LLM):** disagree. SUPPORTED. Grouped citation: this paper supports 'sequenced inbred lines from a natural population'; the co-cited review supplies 205 lines and Raleigh, and the answer says so explicitly.
 
 **Human:** SUPPORTED: sides with the second reviewer. Grouped citation; the co-cited review supplies 205 lines and Raleigh.
 
@@ -30,7 +30,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Judge:** SUPPORTED: Specifies 205 sequenced inbred strains from one wild Raleigh population and their use in quantitative-trait mapping.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** ?
 
@@ -44,7 +44,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Judge:** SUPPORTED: Reports approximately 50% infection and says Wolbachia effects on quantitative traits are rarely significant.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** SUPPORTED: agree. The recombination effect comes from the co-cited paper.
 
@@ -58,7 +58,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Judge:** SUPPORTED: Explicitly reports a weak effect of Wolbachia infection on recombination rate.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** ?
 
@@ -72,7 +72,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Judge:** SUPPORTED: The study found lipid-linked starvation resistance was not operative in its long-lived strains; it does not establish a general reserve mechanism.
 
-**Second reviewer (Claude):** agree. The citation supports its claim, although the answer as a whole missed the question (cited a longevity-selection study).
+**Second reviewer (second LLM):** agree. The citation supports its claim, although the answer as a whole missed the question (cited a longevity-selection study).
 
 **Human:** ?
 
@@ -86,7 +86,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Judge:** SUPPORTED: Identifies Brummer as the mammalian ATGL homolog and links its loss to obesity and impaired fat mobilization.
 
-**Second reviewer (Claude):** disagree. PARTIAL. The abstract states that Brummer is the ATGL homolog and matters for fat storage and mobilization, but obesity is reported only for the double Brummer + AKHR loss. 'Flies lacking Brummer accumulate excess fat' is not stated here.
+**Second reviewer (second LLM):** disagree. PARTIAL. The abstract states that Brummer is the ATGL homolog and matters for fat storage and mobilization, but obesity is reported only for the double Brummer + AKHR loss. 'Flies lacking Brummer accumulate excess fat' is not stated here.
 
 **Human:** PARTIAL: sides with the second reviewer. Obesity is reported only for the double Brummer + AKHR loss, and the cause ('cannot mobilize stored fat normally') is not given in the abstract.
 
@@ -100,7 +100,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Judge:** SUPPORTED: The abstract reports progressive hypoactivity and suggests slower energy-resource mobilization explains extended survival.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** SUPPORTED: agree. 'This' refers to ~50% longer starvation survival in the preceding (uncited) sentence, which the abstract states; confirmed against the full answer.
 
@@ -114,7 +114,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Judge:** SUPPORTED: The abstract reports R² = 0.99 for total energy and starvation resistance, and increased storage of both lipids and carbohydrates.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** ?
 
@@ -128,7 +128,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Judge:** SUPPORTED: Wild-derived populations linked starvation resistance with lipid storage and use; carbohydrate and lipid patterns varied across stress phenotypes.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** ?
 
@@ -142,7 +142,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Judge:** PARTIAL: Starvation resistance rose across most selection lines, but the abstract does not establish distinct mechanisms or say physiological bases were unidentified.
 
-**Second reviewer (Claude):** agree. Borderline: 'possibility of different multiple-stress-resistance mechanisms' supports most of the claim.
+**Second reviewer (second LLM):** agree. Borderline: 'possibility of different multiple-stress-resistance mechanisms' supports most of the claim.
 
 **Human:** ?
 
@@ -156,7 +156,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Judge:** SUPPORTED: The abstract reports the stated correlation, methods, SNP threshold, and authors’ hypothesis about subtle relatedness rather than causal-variant tagging.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** SUPPORTED: agree. Minor: 'selecting SNPs by effect size' slightly broadens 'the top 5% of SNPs'.
 
@@ -170,7 +170,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Judge:** PARTIAL: Accuracy and age-distribution results are stated; larger datasets may improve accuracy and enable wild use, but transfer concerns are not directly tested.
 
-**Second reviewer (Claude):** disagree. SUPPORTED. The paper's own claims (82.6%, age structure, need for larger/wild datasets) are exact; the transfer caveat is a grouped claim supported by the co-cited papers.
+**Second reviewer (second LLM):** disagree. SUPPORTED. The paper's own claims (82.6%, age structure, need for larger/wild datasets) are exact; the transfer caveat is a grouped claim supported by the co-cited papers.
 
 **Human:** SUPPORTED: sides with the second reviewer. Wording point: the abstract says improvements are *possible* with larger datasets, not *needed*, and says the method 'can be easily applied in both laboratory and field settings'. The answer makes the authors sound more cautious than they are (#16 repeats this).
 
@@ -184,7 +184,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Judge:** SUPPORTED: The abstract reports the stated laboratory, semi-field, and transfer-learning accuracies and cautions about laboratory-only generalisability.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** SUPPORTED: agree. All six accuracy figures match.
 
@@ -198,7 +198,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Judge:** SUPPORTED: The abstract reports leg-based accuracy of 0.73 for species and 0.77 for age groups under laboratory conditions.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** ?
 
@@ -215,7 +215,7 @@ CONCLUSIONS: When using mid-infrared spectroscopy and supervised machine learnin
 
 **Judge:** PARTIAL: The abstract directly supports consistent sample handling; it studies preservation and storage, not field-relevant validation or setting transfer.
 
-**Second reviewer (Claude):** disagree. SUPPORTED. Grouped citation: this paper supports the sample-handling part; the co-cited papers cover setting transfer.
+**Second reviewer (second LLM):** disagree. SUPPORTED. Grouped citation: this paper supports the sample-handling part; the co-cited papers cover setting transfer.
 
 **Human:** SUPPORTED: sides with the second reviewer. Supports the sample-handling part directly, and partly the transfer point (95% → 66-72% across preservation methods).
 
@@ -229,7 +229,7 @@ CONCLUSIONS: When using mid-infrared spectroscopy and supervised machine learnin
 
 **Judge:** SUPPORTED: The abstract reports laboratory-colony testing and says larger datasets and wild-vector expansion are possible future improvements.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** ?
 
@@ -246,7 +246,7 @@ CONCLUSIONS: This study shows how machine learning can quickly classify epidemio
 
 **Judge:** SUPPORTED: Mosquito larvae were collected in rural south-eastern Tanzania; the abstract reports no evaluation across other populations.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** ?
 
@@ -260,7 +260,7 @@ CONCLUSIONS: This study shows how machine learning can quickly classify epidemio
 
 **Judge:** SUPPORTED: The abstract reports approximately 80% field species accuracy, almost 100% laboratory accuracy, and the stated age accuracies.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** ?
 
@@ -274,7 +274,7 @@ CONCLUSIONS: This study shows how machine learning can quickly classify epidemio
 
 **Judge:** SUPPORTED: The abstract lists all six indices, both diets, genetic variation, and correlations with the three named stress phenotypes.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** ?
 
@@ -291,7 +291,7 @@ DISCUSSION: We conclude that rapidly acquired desiccation resistance, depending 
 
 **Judge:** SUPPORTED: The abstract reports increased desiccation resistance with more desaturated hydrocarbons, but not greater total hydrocarbon amount.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** SUPPORTED: agree. The answer correctly says 'total surface lipids' for the second paper.
 
@@ -305,7 +305,7 @@ DISCUSSION: We conclude that rapidly acquired desiccation resistance, depending 
 
 **Judge:** SUPPORTED: Selected resistant flies had unchanged total surface lipids and longer-chain cuticular hydrocarbons than controls.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** ?
 
@@ -319,7 +319,7 @@ DISCUSSION: We conclude that rapidly acquired desiccation resistance, depending 
 
 **Judge:** SUPPORTED: Defines within-genotype variation under common macro-environments as micro-environmental plasticity.
 
-**Second reviewer (Claude):** agree. 'Stochastic effects' is a light paraphrase. Note the judge rated this same citation PARTIAL in its first run and SUPPORTED in its second.
+**Second reviewer (second LLM):** agree. 'Stochastic effects' is a light paraphrase. Note the judge rated this same citation PARTIAL in its first run and SUPPORTED in its second.
 
 **Human:** SUPPORTED: agree, but the most borderline of the six: 'stochastic effects' is not in the abstract.
 
@@ -333,7 +333,7 @@ DISCUSSION: We conclude that rapidly acquired desiccation resistance, depending 
 
 **Judge:** SUPPORTED: The abstract reports no SNP replication between populations, high polygenicity, and most associated SNPs participating in DGRP epistatic interactions.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** ?
 
@@ -347,7 +347,7 @@ DISCUSSION: We conclude that rapidly acquired desiccation resistance, depending 
 
 **Judge:** SUPPORTED: The abstract directly describes survival mode, lipid and metabolic changes, reduced reproduction, correlated traits, and unresolved ecological significance.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** ?
 
@@ -361,7 +361,7 @@ DISCUSSION: We conclude that rapidly acquired desiccation resistance, depending 
 
 **Judge:** SUPPORTED: The abstract explicitly lists both D. melanogaster and D. simulans among species of the melanogaster subgroup.
 
-**Second reviewer (Claude):** agree
+**Second reviewer (second LLM):** agree
 
 **Human:** ?
 

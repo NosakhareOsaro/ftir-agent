@@ -1,16 +1,62 @@
 {
+ "judge_version": 3,
  "support": [
   {
+   "passage": 1,
    "pmid": "31544155",
    "verdict": "SUPPORTED",
-   "reason": "The abstract reports laboratory-colony testing and says larger datasets and wild-vector expansion are possible future improvements."
+   "reason": "The abstract reports agreement with true modelled age distributions and says larger datasets and evaluation with wild vectors could improve and expand the method."
   },
   {
+   "passage": 2,
    "pmid": "38500231",
    "verdict": "SUPPORTED",
-   "reason": "Mosquito larvae were collected in rural south-eastern Tanzania; the abstract reports no evaluation across other populations."
+   "reason": "The abstract reports the stated accuracy changes and MLP results, and describes larvae collected and reared in south-eastern Tanzania; it does not demonstrate transfer to other populations."
+  },
+  {
+   "passage": 3,
+   "pmid": "31544155",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract explicitly suggests larger mid-infrared spectroscopy datasets and expansion to wild mosquito vectors as possible next steps."
   }
  ],
+ "raw_support": {
+  "passages": [
+   {
+    "passage": 1,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstract reports agreement with true modelled age distributions and says larger datasets and evaluation with wild vectors could improve and expand the method.",
+    "papers": [
+     {
+      "pmid": "31544155",
+      "contributes": true
+     }
+    ]
+   },
+   {
+    "passage": 2,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstract reports the stated accuracy changes and MLP results, and describes larvae collected and reared in south-eastern Tanzania; it does not demonstrate transfer to other populations.",
+    "papers": [
+     {
+      "pmid": "38500231",
+      "contributes": true
+     }
+    ]
+   },
+   {
+    "passage": 3,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstract explicitly suggests larger mid-infrared spectroscopy datasets and expansion to wild mosquito vectors as possible next steps.",
+    "papers": [
+     {
+      "pmid": "31544155",
+      "contributes": true
+     }
+    ]
+   }
+  ]
+ },
  "accuracy": {
   "score": 0,
   "reason": "It does not give the reference\u2019s key finding or remedy: poor cross-population transfer and improvement using PCA/t-SNE with transfer learning; it discusses different studies instead."

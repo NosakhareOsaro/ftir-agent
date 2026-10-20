@@ -1,11 +1,28 @@
 {
+ "judge_version": 3,
  "support": [
   {
+   "passage": 1,
    "pmid": "17488184",
    "verdict": "SUPPORTED",
-   "reason": "Identifies Brummer as the mammalian ATGL homolog and links its loss to obesity and impaired fat mobilization."
+   "reason": "The abstract identifies Brummer as the mammalian ATGL homolog and links its loss to extreme obesity and impaired acute fat mobilization, as well as chronic fat regulation."
   }
  ],
+ "raw_support": {
+  "passages": [
+   {
+    "passage": 1,
+    "group_verdict": "SUPPORTED",
+    "reason": "The abstract identifies Brummer as the mammalian ATGL homolog and links its loss to extreme obesity and impaired acute fat mobilization, as well as chronic fat regulation.",
+    "papers": [
+     {
+      "pmid": "17488184",
+      "contributes": true
+     }
+    ]
+   }
+  ]
+ },
  "accuracy": {
   "score": 2,
   "reason": "Correctly identifies bmm as the ATGL homolog and states that loss causes excess fat accumulation; added details do not conflict with the reference."

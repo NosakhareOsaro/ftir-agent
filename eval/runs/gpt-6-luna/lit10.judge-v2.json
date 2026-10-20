@@ -1,0 +1,27 @@
+{
+ "judge_version": 2,
+ "support": [
+  {
+   "passage": 1,
+   "pmid": "31544155",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract reports agreement with modelled age distributions and says larger datasets could enable expansion to wild vectors."
+  },
+  {
+   "passage": 2,
+   "pmid": "38500231",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract reports the stated accuracy gains and describes larvae collected in rural south-eastern Tanzania and reared in an insectary."
+  },
+  {
+   "passage": 3,
+   "pmid": "31544155",
+   "verdict": "SUPPORTED",
+   "reason": "The abstract explicitly identifies larger spectroscopy datasets as a possible route to expanding use with wild mosquito vectors."
+  }
+ ],
+ "accuracy": {
+  "score": 0,
+  "reason": "It does not give the reference\u2019s key finding or remedy: poor cross-population transfer and improvement using PCA/t-SNE with transfer learning; it discusses different studies instead."
+ }
+}
