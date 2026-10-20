@@ -121,8 +121,16 @@ reviewed all 25 citation verdicts ([`eval/judge_audit.md`](eval/judge_audit.md))
 with the judge on **21/25 (84%)**. The judge was too strict on 3 grouped citations, where
 co-cited papers each covered part of the sentence, and too lenient on 1, where an abstract
 reported obesity only for a double mutant. With the second reviewer's verdicts, citation
-support is 23/25 (92%). The judge also changed one verdict between runs. This is a
-cross-model check, not a human audit; the file has a column for one.
+support is 23/25 (92%). The judge also changed one verdict between runs.
+
+I then spot-checked 10 verdicts by hand against the abstracts: the 4 disagreements plus 6
+both models called supported. I sided with the second reviewer on all 4 disagreements and
+found nothing either model missed in the other 6 (human–judge agreement 6/10, human–second
+reviewer 10/10). Three of the judge's four errors are the same mistake: it marks a grouped
+citation down because one paper doesn't cover the whole sentence. That is a prompting
+problem, not random noise. The spot-check also found two small overstatements the judge
+didn't flag: the agent said a 2019 paper's authors called larger datasets "needed" where the
+abstract says improvements are "possible".
 
 **Two harness bugs found while validating the eval.** (1) Citations placed after the full
 stop ("…claim. [PMID:x]") were split away from their claim, so the judge saw an empty
@@ -159,6 +167,11 @@ literature and taxonomy tools still work, and the model tests run on a synthetic
 - **Query formulation is the weakest link.** Next step: have the agent start with 3–5 key
   terms and broaden on zero hits, then measure it on a *new* question set. Tuning against
   these 25 questions would overfit them.
+- **The judge's citation check needs better inputs.** It doesn't apply the grouped-citation
+  rule, and it only sees the sentence holding the citation. When one citation at the end of a
+  paragraph covers earlier uncited sentences, those claims go unchecked. Next step: state the
+  rule in the judge prompt, give it every co-cited abstract together, and pass the whole
+  cited paragraph. Then re-measure agreement against the hand-checked verdicts.
 - **The agent and the judge are the same model.** It may go easy on its own style of answer.
   Next step: judge with a different model family.
 - **The judge runs at the model's default temperature** (gpt-6-luna only accepts its default

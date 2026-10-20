@@ -6,7 +6,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Result: second reviewer agrees on 21/25 (84%).** Judge too strict on 3 (#1, #12, #15), too lenient on 1 (#6). With the second reviewer's verdicts, support is 23/25 (92%).
 
-**Human:** replace `?` with agree/disagree to add a real hand audit.
+**Human spot-check (10 verdicts: the 4 disagreements plus #3, #7, #11, #13, #20, #22):** sided with the second reviewer on all 4 disagreements, and agreed with both on the other 6. Human agreement with the judge: 6/10; with the second reviewer: 10/10. Unchecked items keep `?`.
 
 ## 1. lit01, PMID 22318601
 
@@ -18,7 +18,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Second reviewer (Claude):** disagree. SUPPORTED. Grouped citation: this paper supports 'sequenced inbred lines from a natural population'; the co-cited review supplies 205 lines and Raleigh, and the answer says so explicitly.
 
-**Human:** ?
+**Human:** SUPPORTED: sides with the second reviewer. Grouped citation; the co-cited review supplies 205 lines and Raleigh.
 
 ---
 
@@ -46,7 +46,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Second reviewer (Claude):** agree
 
-**Human:** ?
+**Human:** SUPPORTED: agree. The recombination effect comes from the co-cited paper.
 
 ---
 
@@ -88,7 +88,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Second reviewer (Claude):** disagree. PARTIAL. The abstract states that Brummer is the ATGL homolog and matters for fat storage and mobilization, but obesity is reported only for the double Brummer + AKHR loss. 'Flies lacking Brummer accumulate excess fat' is not stated here.
 
-**Human:** ?
+**Human:** PARTIAL: sides with the second reviewer. Obesity is reported only for the double Brummer + AKHR loss, and the cause ('cannot mobilize stored fat normally') is not given in the abstract.
 
 ---
 
@@ -102,7 +102,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Second reviewer (Claude):** agree
 
-**Human:** ?
+**Human:** SUPPORTED: agree. 'This' refers to ~50% longer starvation survival in the preceding (uncited) sentence, which the abstract states; confirmed against the full answer.
 
 ---
 
@@ -158,7 +158,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Second reviewer (Claude):** agree
 
-**Human:** ?
+**Human:** SUPPORTED: agree. Minor: 'selecting SNPs by effect size' slightly broadens 'the top 5% of SNPs'.
 
 ---
 
@@ -172,7 +172,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Second reviewer (Claude):** disagree. SUPPORTED. The paper's own claims (82.6%, age structure, need for larger/wild datasets) are exact; the transfer caveat is a grouped claim supported by the co-cited papers.
 
-**Human:** ?
+**Human:** SUPPORTED: sides with the second reviewer. Wording point: the abstract says improvements are *possible* with larger datasets, not *needed*, and says the method 'can be easily applied in both laboratory and field settings'. The answer makes the authors sound more cautious than they are (#16 repeats this).
 
 ---
 
@@ -186,7 +186,7 @@ Rule for grouped citations (`[PMID:a] [PMID:b]`): each paper must support part o
 
 **Second reviewer (Claude):** agree
 
-**Human:** ?
+**Human:** SUPPORTED: agree. All six accuracy figures match.
 
 ---
 
@@ -217,7 +217,7 @@ CONCLUSIONS: When using mid-infrared spectroscopy and supervised machine learnin
 
 **Second reviewer (Claude):** disagree. SUPPORTED. Grouped citation: this paper supports the sample-handling part; the co-cited papers cover setting transfer.
 
-**Human:** ?
+**Human:** SUPPORTED: sides with the second reviewer. Supports the sample-handling part directly, and partly the transfer point (95% → 66-72% across preservation methods).
 
 ---
 
@@ -293,7 +293,7 @@ DISCUSSION: We conclude that rapidly acquired desiccation resistance, depending 
 
 **Second reviewer (Claude):** agree
 
-**Human:** ?
+**Human:** SUPPORTED: agree. The answer correctly says 'total surface lipids' for the second paper.
 
 ---
 
@@ -321,7 +321,7 @@ DISCUSSION: We conclude that rapidly acquired desiccation resistance, depending 
 
 **Second reviewer (Claude):** agree. 'Stochastic effects' is a light paraphrase. Note the judge rated this same citation PARTIAL in its first run and SUPPORTED in its second.
 
-**Human:** ?
+**Human:** SUPPORTED: agree, but the most borderline of the six: 'stochastic effects' is not in the abstract.
 
 ---
 
