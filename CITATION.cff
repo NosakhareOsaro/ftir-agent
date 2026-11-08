@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "FTIR Research Agent: a cited-literature agent and FTIR starvation-resistance model for Drosophila stress physiology"
+type: software
+authors:
+  - family-names: "Osaro"
+    given-names: "Nosakhare Odionfo"
+    email: "osaronosakhare@gmail.com"
+    orcid: "https://orcid.org/0009-0004-9778-1161"
+license: MIT
+repository-code: "https://github.com/NosakhareOsaro/ftir-agent"
+abstract: >-
+  An LLM agent that answers research questions about Drosophila stress
+  physiology and infrared spectroscopy from real PubMed abstracts with
+  automatically checked citations, and runs the FTIR to
+  starvation-resistance model from the author's MSc dissertation on
+  uploaded spectra, explaining each prediction by spectral band. The
+  tool-calling loop is hand-written and the agent is scored by an
+  evaluation harness of 25 questions.
+keywords:
+  - FTIR spectroscopy
+  - Drosophila
+  - starvation resistance
+  - machine learning
+  - LLM agent
+  - citation verification
+  - bioinformatics
