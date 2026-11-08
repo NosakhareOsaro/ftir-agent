@@ -7,6 +7,8 @@ authors:
     given-names: "Nosakhare Odionfo"
     email: "osaronosakhare@gmail.com"
     orcid: "https://orcid.org/0009-0004-9778-1161"
+version: 1.0.0
+date-released: 2026-11-08
 license: MIT
 repository-code: "https://github.com/NosakhareOsaro/ftir-agent"
 abstract: >-

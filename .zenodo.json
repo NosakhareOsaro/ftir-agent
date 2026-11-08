@@ -1,0 +1,24 @@
+{
+  "title": "FTIR Research Agent: a cited-literature agent and FTIR starvation-resistance model for Drosophila stress physiology",
+  "version": "1.0.0",
+  "description": "<p>An LLM agent that answers research questions about <em>Drosophila</em> stress physiology and infrared spectroscopy from real PubMed abstracts with automatically checked citations, and runs the FTIR to starvation-resistance model from the author's MSc Bioinformatics dissertation (University of Glasgow) on uploaded spectra, explaining each prediction by spectral band.</p><p>The tool-calling loop is hand-written (approximately 100 lines, no agent framework). Every citation the model emits is verified against the abstracts actually fetched in that turn, and the agent is scored by an evaluation harness of 25 questions with a per-run citation judge, audited against reference labels and spot-checked by hand.</p><p><strong>Scope of this archive:</strong> the agent, the evaluation harness and the eval run outputs. The trained model artefacts and example spectra under <code>model/artifacts/</code> and <code>model/examples/</code> are deliberately excluded, because they are derived from unpublished laboratory data.</p>",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Osaro, Nosakhare Odionfo",
+      "orcid": "0009-0004-9778-1161",
+      "affiliation": ""
+    }
+  ],
+  "keywords": [
+    "FTIR spectroscopy",
+    "Drosophila",
+    "starvation resistance",
+    "machine learning",
+    "LLM agent",
+    "citation verification",
+    "bioinformatics"
+  ]
+}
