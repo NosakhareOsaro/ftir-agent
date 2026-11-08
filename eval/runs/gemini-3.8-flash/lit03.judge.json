@@ -1,0 +1,13 @@
+{
+ "support": [
+  {
+   "pmid": "24714809",
+   "verdict": "SUPPORTED",
+   "reason": "All numbers, genotyping strategy, inbred lines, inversions, genome size, and Wolbachia are directly stated."
+  }
+ ],
+ "accuracy": {
+  "score": 2,
+  "reason": "The answer provides the exact numbers of SNPs and non-SNP variants matching the reference."
+ }
+}

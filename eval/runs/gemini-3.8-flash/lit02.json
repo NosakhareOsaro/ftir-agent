@@ -1,0 +1,60 @@
+{
+ "question": "Roughly what fraction of DGRP lines are infected with Wolbachia, and does infection have much effect on quantitative traits?",
+ "answer": "**Approximately 50%** of the *Drosophila melanogaster* Genetic Reference Panel (DGRP) lines are infected with *Wolbachia*, and infection status **rarely has a significant effect** on quantitative traits [PMID:24714809].\n\n### Supporting Details\n* **Infection frequency:** In the comprehensive genomic characterization of the 205 freeze-2 DGRP lines, roughly 50% were found to carry *Wolbachia*, with four lines harboring germline insertions of *Wolbachia* sequences [PMID:24714809].\n* **Impact on quantitative traits:** Phenotypic associations with *Wolbachia* infection status across evaluated quantitative traits are rarely statistically significant [PMID:24714809]. Because of this, while standard DGRP analysis pipelines routinely record and test *Wolbachia* status as a potential covariate, it generally accounts for very little phenotypic variance compared to host genetic polymorphisms and polymorphic chromosomal inversions [PMID:24714809].\n\n### References\n* Huang W, et al. (2014). Natural variation in genome architecture among 205 Drosophila melanogaster Genetic Reference Panel lines. *Genome Res*. [PMID:24714809]",
+ "trace": [
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"DGRP Wolbachia infection quantitative traits\"}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"DGRP Wolbachia pipientis prevalence phenotypic effect\"}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"\\\"Drosophila Genetic Reference Panel\\\" Wolbachia\"}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"\\\"Drosophila melanogaster Genetic Reference Panel\\\" Mackay\"}",
+   "error": null
+  },
+  {
+   "tool": "fetch_abstracts",
+   "arguments": "{\"pmids\":[\"22318601\",\"24714809\",\"28834395\"]}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [
+  "24714809"
+ ],
+ "fetched_pmids": [
+  "22318601",
+  "24714809",
+  "28834395"
+ ],
+ "ungrounded_citations": [],
+ "llm_requests": 6,
+ "hit_step_limit": false,
+ "seconds": 40.8,
+ "abstracts": {
+  "22318601": {
+   "title": "The Drosophila melanogaster Genetic Reference Panel.",
+   "abstract": "A major challenge of biology is understanding the relationship between molecular genetic variation and variation in quantitative traits, including fitness. This relationship determines our ability to predict phenotypes from genotypes and to understand how evolutionary forces shape variation within and between species. Previous efforts to dissect the genotype-phenotype map were based on incomplete genotypic information. Here, we describe the Drosophila melanogaster Genetic Reference Panel (DGRP), a community resource for analysis of population genomics and quantitative traits. The DGRP consists of fully sequenced inbred lines derived from a natural population. Population genomic analyses reveal reduced polymorphism in centromeric autosomal regions and the X chromosome, evidence for positive and negative selection, and rapid evolution of the X chromosome. Many variants in novel genes, most at low frequency, are associated with quantitative traits and explain a large fraction of the phenotypic variance. The DGRP facilitates genotype-phenotype mapping using the power of Drosophila genetics."
+  },
+  "24714809": {
+   "title": "Natural variation in genome architecture among 205 Drosophila melanogaster Genetic Reference Panel lines.",
+   "abstract": "The Drosophila melanogaster Genetic Reference Panel (DGRP) is a community resource of 205 sequenced inbred lines, derived to improve our understanding of the effects of naturally occurring genetic variation on molecular and organismal phenotypes. We used an integrated genotyping strategy to identify 4,853,802 single nucleotide polymorphisms (SNPs) and 1,296,080 non-SNP variants. Our molecular population genomic analyses show higher deletion than insertion mutation rates and stronger purifying selection on deletions. Weaker selection on insertions than deletions is consistent with our observed distribution of genome size determined by flow cytometry, which is skewed toward larger genomes. Insertion/deletion and single nucleotide polymorphisms are positively correlated with each other and with local recombination, suggesting that their nonrandom distributions are due to hitchhiking and background selection. Our cytogenetic analysis identified 16 polymorphic inversions in the DGRP. Common inverted and standard karyotypes are genetically divergent and account for most of the variation in relatedness among the DGRP lines. Intriguingly, variation in genome size and many quantitative traits are significantly associated with inversions. Approximately 50% of the DGRP lines are infected with Wolbachia, and four lines have germline insertions of Wolbachia sequences, but effects of Wolbachia infection on quantitative traits are rarely significant. The DGRP complements ongoing efforts to functionally annotate the Drosophila genome. Indeed, 15% of all D. melanogaster genes segregate for potentially damaged proteins in the DGRP, and genome-wide analyses of quantitative traits identify novel candidate genes. The DGRP lines, sequence data, genotypes, quality scores, phenotypes, and analysis and visualization tools are publicly available."
+  },
+  "28834395": {
+   "title": "Charting the genotype-phenotype map: lessons from the Drosophila melanogaster Genetic Reference Panel.",
+   "abstract": "Understanding the genetic architecture (causal molecular variants, their effects, and frequencies) of quantitative traits is important for precision agriculture and medicine and predicting adaptive evolution, but is challenging in most species. The Drosophila melanogaster Genetic Reference Panel (DGRP) is a collection of 205 inbred strains with whole genome sequences derived from a single wild population in Raleigh, NC, USA. The large amount of quantitative genetic variation, lack of population structure, and rapid local decay of linkage disequilibrium in the DGRP and outbred populations derived from DGRP lines present a favorable scenario for performing genome-wide association (GWA) mapping analyses to identify candidate causal genes, polymorphisms, and pathways affecting quantitative traits. The many GWA studies utilizing the DGRP have revealed substantial natural genetic variation for all reported traits, little evidence for variants with large effects but enrichment for variants with low P-values, and a tendency for lower frequency variants to have larger effects than more common variants. The variants detected in the GWA analyses rarely overlap those discovered using mutagenesis, and often are the first functional annotations of computationally predicted genes. Variants implicated in GWA analyses typically have sex-specific and genetic background-specific (epistatic) effects, as well as pleiotropic effects on other quantitative traits. Studies in the DGRP reveal substantial genetic control of environmental variation. Taking account of genetic architecture can greatly improve genomic prediction in the DGRP. These features of the genetic architecture of quantitative traits are likely to apply to other species, including humans. WIREs Dev Biol 2018, 7:e289. doi: 10.1002/wdev.289 This article is categorized under: Invertebrate Organogenesis > Flies."
+  }
+ },
+ "existing_pmids": [
+  "24714809"
+ ]
+}

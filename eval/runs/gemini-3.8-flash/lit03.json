@@ -1,0 +1,40 @@
+{
+ "question": "How many SNPs and non-SNP variants were identified across the 205 DGRP lines in the Freeze 2 genome analysis?",
+ "answer": "In the Freeze 2 genome analysis of the 205 *Drosophila melanogaster* Genetic Reference Panel (DGRP) lines, Huang et al. identified:\n\n* **4,853,802** single nucleotide polymorphisms (SNPs) [PMID:24714809]\n* **1,296,080** non-SNP variants [PMID:24714809]\n\nThese variants were identified using an integrated genotyping strategy across the 205 sequenced inbred lines, alongside the identification of 16 polymorphic chromosomal inversions and variation in genome size and *Wolbachia* infection status [PMID:24714809].\n\n### References\n* Huang W, et al. (2014). Natural variation in genome architecture among 205 Drosophila melanogaster Genetic Reference Panel lines. [PMID:24714809]",
+ "trace": [
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Drosophila Genetic Reference Panel 205 Freeze 2 Huang\"}",
+   "error": null
+  },
+  {
+   "tool": "search_pubmed",
+   "arguments": "{\"query\":\"Huang Mackay 205 Drosophila Genetic Reference Panel\"}",
+   "error": null
+  },
+  {
+   "tool": "fetch_abstracts",
+   "arguments": "{\"pmids\":[\"24714809\"]}",
+   "error": null
+  }
+ ],
+ "cited_pmids": [
+  "24714809"
+ ],
+ "fetched_pmids": [
+  "24714809"
+ ],
+ "ungrounded_citations": [],
+ "llm_requests": 6,
+ "hit_step_limit": false,
+ "seconds": 32.9,
+ "abstracts": {
+  "24714809": {
+   "title": "Natural variation in genome architecture among 205 Drosophila melanogaster Genetic Reference Panel lines.",
+   "abstract": "The Drosophila melanogaster Genetic Reference Panel (DGRP) is a community resource of 205 sequenced inbred lines, derived to improve our understanding of the effects of naturally occurring genetic variation on molecular and organismal phenotypes. We used an integrated genotyping strategy to identify 4,853,802 single nucleotide polymorphisms (SNPs) and 1,296,080 non-SNP variants. Our molecular population genomic analyses show higher deletion than insertion mutation rates and stronger purifying selection on deletions. Weaker selection on insertions than deletions is consistent with our observed distribution of genome size determined by flow cytometry, which is skewed toward larger genomes. Insertion/deletion and single nucleotide polymorphisms are positively correlated with each other and with local recombination, suggesting that their nonrandom distributions are due to hitchhiking and background selection. Our cytogenetic analysis identified 16 polymorphic inversions in the DGRP. Common inverted and standard karyotypes are genetically divergent and account for most of the variation in relatedness among the DGRP lines. Intriguingly, variation in genome size and many quantitative traits are significantly associated with inversions. Approximately 50% of the DGRP lines are infected with Wolbachia, and four lines have germline insertions of Wolbachia sequences, but effects of Wolbachia infection on quantitative traits are rarely significant. The DGRP complements ongoing efforts to functionally annotate the Drosophila genome. Indeed, 15% of all D. melanogaster genes segregate for potentially damaged proteins in the DGRP, and genome-wide analyses of quantitative traits identify novel candidate genes. The DGRP lines, sequence data, genotypes, quality scores, phenotypes, and analysis and visualization tools are publicly available."
+  }
+ },
+ "existing_pmids": [
+  "24714809"
+ ]
+}
